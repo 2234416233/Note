@@ -1,12 +1,6 @@
 # 【J2SE】容器类——List、Set和Map
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
 
-[LemmonTreelss](https://me.csdn.net/qq_26545305) 2016-12-11 15:44:56 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 947 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 1
-
-分类专栏： [Java](https://blog.csdn.net/qq_26545305/category_6548909.html)
-
-版权
 
 一、容器
 
@@ -30,53 +24,17 @@
 
   增强Name类的equals和hashCode方法如下：
 
-
-
 ```java
 public boolean equals(Object){
-
-
-
 	if(obj instanceof Name){
-
-
-
 	   Name name = (Name) obj;
-
-
-
            return (firstName.equals(name.firstName))
-
-
-
                && (lastName.equals(name.lastName));
-
-
-
       }
-
-
-
       return super.equals(obj);
-
-
-
 }
-
-
-
- 
-
-
-
 public int hashCode(){
-
-
-
       return firstName.hashCode();
-
-
-
 }
 ```
 
@@ -120,231 +78,62 @@ public int hashCode(){
 
    ![img](https://img-blog.csdn.net/20161217170218449?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjY1NDUzMDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
+
+
    2、增强for循环主要用来取集合数组的数据。只能用在数组实现iterable接口的集合类上。
-
-
 
 ```java
 package cn.itcast.generic;
 
-
-
- 
-
-
-
 import java.util.ArrayList;
-
-
-
 import java.util.Iterator;
-
-
-
 import java.util.LinkedHashMap;
-
-
-
 import java.util.List;
-
-
-
 import java.util.Map;
-
-
-
 import java.util.Set;
-
-
-
- 
-
-
-
 import org.junit.Test;
 
 
-
- 
-
-
-
 public class Demo2 {
-
-
-
 	@Test
-
-
-
 	public void test1(){
-
-
-
 		List<String> list = new ArrayList<String>();
-
-
-
 		list.add("aaa");
-
-
-
 		list.add("bbb");
-
-
-
 		list.add("ccc");
-
-
-
-		
-
-
-
 		//传统
-
-
-
 		Iterator<String> it = list.iterator(); //得到了集合迭代器
-
-
-
 		while(it.hasNext()){
-
-
-
 			String value = it.next();
-
-
-
 			System.out.println(value);			
-
-
-
 		}		
-
-
-
 		//增强for循环
-
-
-
 		for(String s:list){
-
-
-
 			System.out.println(s);
-
-
-
 		}		
-
-
-
 	}
-
-
-
-	
-
-
-
 	@Test
-
-
-
 	public void test2(){
-
-
-
 		Map<Integer,String> map = new LinkedHashMap<Integer,String>();
-
-
-
 		map.put(1, "aaa");
-
-
-
 		map.put(2, "bbb");
-
-
-
 		map.put(3, "ccc");
-
-
-
 		//传统 keyset entryset
-
-
-
 		Set<Map.Entry<Integer,String>> set = map.entrySet();
-
-
-
 		Iterator<Map.Entry<Integer,String>> it = set.iterator();
-
-
-
 		while(it.hasNext()){
-
-
-
 			Map.Entry<Integer, String> entry = it.next();		
-
-
-
 			int key=entry.getKey();
-
-
-
 			String value = entry.getValue();
-
-
-
 			System.out.println(key + "=" + value);			
-
-
-
 		}
-
-
-
-		
-
-
-
 		//增强for循环，增强for循环不能直接对map进行迭代
-
-
-
 		for(Map.Entry<Integer, String> entry:map.entrySet()){
-
-
-
 			int key = entry.getKey();
-
-
-
 			String value=entry.getValue();
-
-
-
 			System.out.println(key + "=" + value);
-
-
-
 		}
-
-
-
-		
-
-
-
 	}
-
-
-
 }
 ```
 

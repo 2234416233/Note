@@ -1,10 +1,6 @@
 # Serializable 序列化和反序列化的概念,作用的通俗易懂的解释
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/reprint.png)
 
-[hardecz](https://me.csdn.net/u013870094) 2018-09-18 23:27:49 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 66854 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 305
-
-分类专栏： [java](https://blog.csdn.net/u013870094/category_7353397.html)
 
 遇到这个 Java Serializable 序列化这个接口，我们可能会有如下的问题
 a，什么叫序列化和反序列化

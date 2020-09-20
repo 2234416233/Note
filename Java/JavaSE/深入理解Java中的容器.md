@@ -1,18 +1,6 @@
 # 深入理解Java中的容器
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
 
-[安静的技术控](https://me.csdn.net/a2011480169) 2016-07-27 17:25:40 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 48854 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 96
-
-分类专栏： [JavaSe](https://blog.csdn.net/a2011480169/category_5964867.html) [JavaSe-Skill](https://blog.csdn.net/a2011480169/category_9266483.html)
-
-版权
-
-[![img](https://img-blog.csdnimg.cn/20190918135101160.png)FlinkFlink![img](https://profile.csdnimg.cn/B/7/7/3_a2011480169)安静的技术控](https://blog.csdn.net/a2011480169/category_10081971.html)
-
-¥39.90
-
-分享赚￥3.99订阅博主
 
 1、容器的概念
 在Java当中，如果有一个类专门用来存放其它类的对象，这个类就叫做容器，或者就叫做集合，集合就是将若干性质相同或相近的类对象组合在一起而形成的一个整体

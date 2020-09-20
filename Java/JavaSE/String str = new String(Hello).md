@@ -1,12 +1,6 @@
 # Java里String str = new String("Hello");会创建几个对象?
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
 
-[songfelicity](https://me.csdn.net/songxinfeng1989) 2018-03-16 06:31:50 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 4722 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 5
-
-分类专栏： [java基础](https://blog.csdn.net/songxinfeng1989/category_7511862.html)
-
-版权
 
 谈到这个问题首先得知道String的两种赋值方式：
 
@@ -27,28 +21,10 @@
 ```java
 package com.song.test;
 
-
-
- 
-
-
-
 public class StringTest {
-
-
-
 	public static void main(String[] args) {
-
-
-
 		String str = new String("hello");
-
-
-
 	}
-
-
-
 }
 ```
 
@@ -102,73 +78,22 @@ String a="he"+"llo";  再看看这里呢？
 
 ```java
 public class Test {  
-
-
-
-  
-
-
-
     public static void main(String[] args) {  
-
-
-
         String str = "abc";  
-
-
-
         char[] array = {'a', 'b', 'c'};  
-
-
-
         String str2 = new String(array);  
-
-
-
         //使用intern()将str2字符串内容放入常量池  
-
-
-
         str2 = str2.intern();  
-
-
-
         //这个比较用来说明字符串字面常量和我们使用intern处理后的字符串是在同一个地方  
-
-
-
         System.out.println(str == str2);  
 
-
-
         //那好，下面我们就拼命的intern吧  
-
-
-
         ArrayList<String> list = new ArrayList<String>();  
-
-
-
         for (int i = 0; i < 10000000; i++) {  
-
-
-
             String temp = String.valueOf(i).intern();  
-
-
-
             list.add(temp);  
-
-
-
         }  
-
-
-
     }  
-
-
-
 }
 ```
 
@@ -188,17 +113,7 @@ Java Result: 1
 
 
 
-
-
 # 底层实现
-
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
-
-[huangyaa729](https://me.csdn.net/huangyaa729) 2019-03-18 16:16:56 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 756 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 3
-
-分类专栏： [java基础](https://blog.csdn.net/huangyaa729/category_7155444.html)
-
-版权
 
 ```
 String str = "hello";

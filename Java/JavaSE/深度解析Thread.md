@@ -2,14 +2,6 @@
 
 
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
-
-[书呆子Rico](https://me.csdn.net/justloveyou_) 2017-01-11 20:44:31 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 8600 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 39
-
-分类专栏： [Java-并发编程](https://blog.csdn.net/justloveyou_/category_6555204.html) [Java并发编程学习笔记](https://blog.csdn.net/justloveyou_/category_9268095.html)
-
-版权
-
 **摘要：**
 
 　　Java 中 Thread类 的各种操作与线程的生命周期密不可分，了解线程的生命周期有助于对Thread类中的各方法的理解。一般来说，线程从最初的创建到最终的消亡，要经历创建、就绪、运行、阻塞 和 消亡 五个状态。在线程的生命周期中，上下文切换通过存储和恢复CPU状态使得其能够从中断点恢复执行。结合 线程生命周期，本文最后详细介绍了 Thread 各常用 API。特别地，在介绍会导致线程进入Waiting状态(包括Timed Waiting状态)的相关API时，笔者会特别关注两个问题：

@@ -1,12 +1,6 @@
 # Java中int转String 和 String转int 各方法效率对比
 
-![img](https://csdnimg.cn/release/phoenix/template/new_img/original.png)
 
-[行者小朱](https://me.csdn.net/u012050154) 2016-05-05 10:45:44 ![img](https://csdnimg.cn/release/phoenix/template/new_img/articleReadEyes.png) 80552 ![img](https://csdnimg.cn/release/phoenix/template/new_img/tobarCollectionActive.png) 已收藏 32
-
-分类专栏： [Java](https://blog.csdn.net/u012050154/category_6116524.html)
-
-版权
 
 # **一、int转String有三种方式**
 
@@ -16,115 +10,37 @@
 
 (3)Integer.toString(num)
 
-
-
 ```java
 //int => String
-
-
-
 int num = 123456789;
 
-
-
- 
-
-
-
 //(1)num + ""
-
-
-
 long start = System.currentTimeMillis();//得到开始运行时系统时间		
-
-
-
 for(int i=0; i<100000; i++){
-
-
-
 	String str = num + "";
-
-
-
 }	
-
-
-
 long end = System.currentTimeMillis();//得到结束运行时系统时间
-
-
-
 System.out.println("num + \"\" : " + (end - start));
 
-
-
- 
-
-
-
 //(2)String.valueOf(num)
-
-
-
 start = System.currentTimeMillis();
-
-
-
 for(int i=0; i<100000; i++){
-
-
-
 	String str = String.valueOf(num);
-
-
-
 }
 
-
-
 end = System.currentTimeMillis();
-
-
-
 System.out.println("String.valueOf(num) : " + (end - start));
 
-
-
- 
-
-
-
 //(3)Integer.toString(num)
-
-
-
 start = System.currentTimeMillis();
-
-
-
 for(int i=0; i<100000; i++){
-
-
-
 	String str = Integer.toString(num);
-
-
-
 }
-
-
-
 end = System.currentTimeMillis();
-
-
-
 System.out.println("Integer.toString(num) : " + (end - start));
 ```
 
 运行结果：
-
-
 
 ```apache
 num + "" : 45
@@ -156,83 +72,29 @@ public static String valueOf(Object obj){return (obj==null)?"null":obj.toString(
 
 (2)Integer.valueOf(str).intValue()
 
-
-
 ```java
 //String => int
-
-
-
 String s = "123456789";
-
-
-
- 
-
-
-
 //(1)Integer.parseInt(str)		
-
-
-
 start = System.currentTimeMillis();
-
-
-
 for(int i=0; i<100000; i++){
-
-
-
 	int n = Integer.parseInt(s);
-
-
-
 }
 
-
-
 end = System.currentTimeMillis();
-
-
-
 System.out.println("Integer.parseInt(str) : " + (end - start));
 
-
-
- 
-
-
-
 //(2)Integer.valueOf(str).intValue()
-
-
-
 start = System.currentTimeMillis();
-
-
-
 for(int i=0; i<100000; i++){
-
-
-
 	int n = Integer.valueOf(s).intValue();
-
-
-
 }
 
-
-
 end = System.currentTimeMillis();
-
-
-
 System.out.println("Integer.valueOf(str).intValue() : " + (end - start));
 ```
 
 运行结果：
-
-
 
 ```less
 Integer.parseInt(str) : 13

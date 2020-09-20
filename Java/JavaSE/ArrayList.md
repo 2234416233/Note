@@ -1,6 +1,6 @@
-# java学习笔记
+# ArrayList
 
-### ArrayList
+### 
 
 ArrayList是一个容量可以自动增长的动态数组，它继承了AbstractList，实现了List、RandomAccess, Cloneable, java.io.Serializable。
 基本的ArrayList，长于随机访问元素，但是在List中间插入和移除元素时较慢。同时，ArrayList的操作不是线程安全的！一般在单线程中才使用ArrayList，而在多线程中一般使用Vector或者CopyOnWriteArrayList。
