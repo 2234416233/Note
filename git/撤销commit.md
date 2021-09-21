@@ -8,11 +8,7 @@ git add . //添加所有文件
 
 git commit -m "本功能全部完成"
 
-
-
 执行完commit后，想撤回commit，怎么办？
-
-
 
 这样凉拌：
 
