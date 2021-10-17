@@ -1,34 +1,4 @@
-- [![博客园Logo](https://www.cnblogs.com/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM)](https://www.cnblogs.com/)
-- [首页](https://www.cnblogs.com/)
-- [新闻](https://news.cnblogs.com/)
-- [博问](https://q.cnblogs.com/)
-- [专区](https://brands.cnblogs.com/)
-- [闪存](https://ing.cnblogs.com/)
-- [班级](https://edu.cnblogs.com/)
-
-- ![搜索](https://www.cnblogs.com/images/aggsite/search.svg)
-
-- ![我的博客](https://www.cnblogs.com/images/aggsite/myblog.svg)
-
-  ![短消息](https://www.cnblogs.com/images/aggsite/message.svg?v=oS4PkibyMjZ9rGD5XAcLt99uW_s76Javy2up4dbnZNY)
-
-  [![用户头像](https://pic.cnblogs.com/face/1675663/20190514191233.png)](https://home.cnblogs.com/u/1675663)
-
-# [BYRans](https://www.cnblogs.com/BYRans/)
-
-Better You, Rans. (BYRans)
-
 ## [Java基础知识总结](https://www.cnblogs.com/BYRans/p/Java.html)
-
-本博文内容参考相关博客以及《Java编程思想》整理而成，如有侵权，请联系博主。
-
-转载请注明出处：http://www.cnblogs.com/BYRans/
-
-PDF版下载链接：[《Java基础知识总结》](http://files.cnblogs.com/files/BYRans/Java基础知识总结.pdf)。
-
-如果您想在此基础上做一些修改，请联系dingyu.sdu@gmail.com，我把word原版发给您。
-
- 
 
 # 一：java概述：
 
@@ -207,7 +177,7 @@ PATH环境变量。作用是指定命令搜索路径，在命令行下面执行�
 
 　　Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有的区域随着虚拟机进程的启动而存在，有些区域则是依赖用户线程的启动和结束而建立和销毁。根据《Java虚拟机规范（第2版）》的规定，Java虚拟机所管理的内存将会包括以下几个运行时数据区域，如下图所示：
 
-　　　　　　　　　　![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124550512-1805881746.jpg)
+　　　　　　　　　　![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124550512-1805881746.jpg)
 
 1. **程序计数器**　　　　　
 
@@ -257,11 +227,11 @@ PATH环境变量。作用是指定命令搜索路径，在命令行下面执行�
 
 　　**由于****reference类型在Java虚拟机规范里面只规定了一个指向对象的引用，并没有定义这个引用应该通过哪种方式去定位，以及访问到Java堆中的对象的具体位置，因此不同虚拟机实现的对象访问方式会有所不同，主流的访问方式有两种：使用句柄和直接指针。** **如果使用句柄访问方式，Java堆中将会划分出一块内存来作为句柄池，reference****中存储的就是对象的句柄地址，而句柄中包含了对象实例数据和类型数据各自的具体地址信息**，如下图所示：
 
-　　　　　　![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124551247-1443848474.jpg)
+　　　　　　![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124551247-1443848474.jpg)
 
 　　**如果使用的是直接指针访问方式，****Java** **堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，reference中直接存储的就是对象地址，如下图所示：**
 
-　　　　　　![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124551919-508971615.jpg)
+　　　　　　![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124551919-508971615.jpg)
 
 　　**这两种对象的访问方式各有优势，使用句柄访问方式的最大好处就是****reference中存储的是稳定的句柄地址，在对象被移动（垃圾收集时移动对象是非常普遍的行为）时只会改变句柄中的实例数据指针，而reference****本身不需要被修改。使用直接指针访问方式的最大好处就是速度更快，它节省了一次指针定位的时间开销，由于对象的访问在Java****中非常频繁，因此这类开销积少成多后也是一项非常可观的执行成本。**就本书讨论的主要虚拟机Sun HotSpot而言，它是使用第二种方式进行对象访问的，但从整个软件开发的范围来看，各种语言和框架使用句柄来访问的情况也十分常见。
 
@@ -331,7 +301,7 @@ PATH环境变量。作用是指定命令搜索路径，在命令行下面执行�
 
 构造函数：是给与之对应的对象进行初始化。它具有针对性。
 
-![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124552325-14099370.png)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124552325-14099370.png)
 
 1. 执行顺序：（优先级从高到低。）静态代码块>mian方法>构造代码块>构造方法。其中静态代码块只执行一次。构造代码块在每次创建对象是都会执行。
 2. 静态代码块的作用：比如我们在调用C语言的动态库时会可把.so文件放在此处。 
@@ -1001,7 +971,7 @@ throw：就是自己进行异常处理，处理的时候有两种方式，要么
 
 **try catch finally的几种结合方式：**
 
-![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124552809-489223528.png)![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124553169-1573891410.png)1，
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124552809-489223528.png)![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124553169-1573891410.png)1，
 
 try
 
@@ -1081,7 +1051,7 @@ run()：run()方法只是类的一个普通方法而已，如果直接调用Run�
 
 **消亡：**stop()
 
-![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124553856-1742801848.png)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124553856-1742801848.png)
 
 **创建线程的第二种方式：实现一个接口Runnable。**
 
@@ -1531,7 +1501,7 @@ return x;
 
 **在使用一个体系时，原则：参阅顶层内容。建立底层对象。**
 
-![img](https://images2015.cnblogs.com/blog/665518/201509/665518-20150909124554856-1005276506.png)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/665518-20150909124554856-1005276506.png)
 
 \------------------------------------------------------------
 
@@ -1967,356 +1937,3 @@ Class clazz2 = Person.class;
 
   }
 
-转载请注明出处：http://www.cnblogs.com/BYRans/
-
-分类: [Java](https://www.cnblogs.com/BYRans/category/732935.html)
-
-标签: [Java](https://www.cnblogs.com/BYRans/tag/Java/)
-
-[好文要顶](javascript:void(0);) [关注我](javascript:void(0);) [收藏该文](javascript:void(0);) [![img](https://common.cnblogs.com/images/icon_weibo_24.png)](javascript:void(0);) [![img](https://common.cnblogs.com/images/wechat.png)](javascript:void(0);)
-
-[![img](https://pic.cnblogs.com/face/665518/20150619101346.png)](https://home.cnblogs.com/u/BYRans/)
-
-[BYRans](https://home.cnblogs.com/u/BYRans/)
-[关注 - 7](https://home.cnblogs.com/u/BYRans/followees/)
-[粉丝 - 201](https://home.cnblogs.com/u/BYRans/followers/)
-
-[+加关注](javascript:void(0);)
-
-27
-
-0
-
-[« ](https://www.cnblogs.com/BYRans/p/4735409.html)上一篇： [广义线性模型（Generalized Linear Models）](https://www.cnblogs.com/BYRans/p/4735409.html)
-[» ](https://www.cnblogs.com/BYRans/p/4905420.html)下一篇： [Softmax回归（Softmax Regression）](https://www.cnblogs.com/BYRans/p/4905420.html)
-
-posted on 2015-09-09 12:46 [BYRans](https://www.cnblogs.com/BYRans/) 阅读(70340) 评论(15) [编辑](https://i.cnblogs.com/EditPosts.aspx?postid=4794322) [收藏](javascript:void(0))
-
-
-
-
-
-### 评论
-
-#### [#1楼](https://www.cnblogs.com/BYRans/p/Java.html#3263182) 2015-09-09 12:51 [Stone Lee](https://home.cnblogs.com/u/137848/)
-
-
-
-整理很全，谢谢。
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#2楼](https://www.cnblogs.com/BYRans/p/Java.html#3263245) 2015-09-09 14:20 [雨花梦](https://www.cnblogs.com/yuhuameng/)
-
-
-
-看看，不错。
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#3楼](https://www.cnblogs.com/BYRans/p/Java.html#3263252) [楼主] 2015-09-09 14:24 [BYRans](https://www.cnblogs.com/BYRans/)
-
-
-
-[@](https://www.cnblogs.com/BYRans/p/Java.html#3263182) Stone Lee
-
-io相关的内容我没有整理进去，您自己补充上去吧
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#4楼](https://www.cnblogs.com/BYRans/p/Java.html#3263317) 2015-09-09 15:21 [胡家威](https://www.cnblogs.com/yinger/)
-
-
-
-谢谢整理，正好可以慢慢看，嘿嘿。
-暂时看到一个问题，关于运行时常量池是方法区的一部分，貌似不一定是了，这里有篇string的intern的介绍，里面有提到，http://www.360doc.com/content/14/0721/16/1073512_396062351.shtml
-再次感谢分享！
-
-[支持(1) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#5楼](https://www.cnblogs.com/BYRans/p/Java.html#3263319) [楼主] 2015-09-09 15:23 [BYRans](https://www.cnblogs.com/BYRans/)
-
-
-
-[@](https://www.cnblogs.com/BYRans/p/Java.html#3263317) 胡家威
-谢谢指正
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#6楼](https://www.cnblogs.com/BYRans/p/Java.html#3263347) 2015-09-09 15:54 [SonoFelice](https://www.cnblogs.com/sonofelice/)
-
-
-
-丁煜，棒棒哒！！！我是萌萌~~
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#7楼](https://www.cnblogs.com/BYRans/p/Java.html#3263382) [楼主] 2015-09-09 16:35 [BYRans](https://www.cnblogs.com/BYRans/)
-
-
-
-[@](https://www.cnblogs.com/BYRans/p/Java.html#3263347) SonoFelice
-:-D
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#8楼](https://www.cnblogs.com/BYRans/p/Java.html#3266043) 2015-09-14 09:18 [程序员小跃](https://www.cnblogs.com/dimple91/)
-
-
-
-很仔细的看完了，很受益哦。不过有错别字：“静态代码块>mian方法>构造代码块>构造方法”这句话应该是main方法吧，小弟我眼尖，楼主请见谅哈。以后就成为你忠实的读者了，哈哈
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#9楼](https://www.cnblogs.com/BYRans/p/Java.html#3788717) 2017-09-18 19:36 [巴扎嘿你不黑](https://home.cnblogs.com/u/1216553/)
-
-
-
-谢谢楼主 收藏啦哈
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#10楼](https://www.cnblogs.com/BYRans/p/Java.html#3848515) 2017-11-23 16:29 [河蟹社会](https://www.cnblogs.com/StruggleSomnus/)
-
-
-
-超级好文啊. JAVA初学者
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#11楼](https://www.cnblogs.com/BYRans/p/Java.html#4047203) 2018-08-21 14:07 [水慕天华](https://home.cnblogs.com/u/1440906/)
-
-
-
-写的不错
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#12楼](https://www.cnblogs.com/BYRans/p/Java.html#4598659) 2020-06-08 00:37 [想成为老菜鸟的小菜鸟](https://www.cnblogs.com/zhuawa1995/)
-
-
-
-缺少IO流和序列化的相关知识
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-#### [#13楼](https://www.cnblogs.com/BYRans/p/Java.html#4702601) 2020-10-11 19:22 [wuyangedu](https://home.cnblogs.com/u/1869118/)
-
-
-
-挺好的！！！
-
-[支持(0) ](javascript:void(0);)[反对(0)](javascript:void(0);)
-
-[回复 ](javascript:void(0);)[引用](javascript:void(0);)
-
-
-
-
-
-[刷新评论](javascript:void(0);)[刷新页面](https://www.cnblogs.com/BYRans/p/Java.html#)[返回顶部](https://www.cnblogs.com/BYRans/p/Java.html#top)
-
-发表评论
-
-
-
-编辑预览
-
-
-
- [退出](javascript:void(0);) [订阅评论](javascript:void(0);)
-
-[Ctrl+Enter快捷键提交]
-
-[【推荐】News: 大型组态、工控、仿真、CADGIS 50万行VC++源码免费下载](http://www.softbam.com/index.htm)
-[【推荐】博客园 & 陌上花开HIMMR 给单身的程序员小哥哥助力脱单啦～](https://www.cnblogs.com/himmr/p/14043893.html)
-[【推荐】了不起的开发者，挡不住的华为，园子里的品牌专区](https://brands.cnblogs.com/huawei)
-[【推荐】未知数的距离，毫秒间的传递，声网与你实时互动](https://brands.cnblogs.com/agora)
-[【福利】AWS携手博客园为开发者送免费套餐与抵扣券](https://brands.cnblogs.com/aws/free?source=CH)
-[【推荐】阿里云爆款特惠，精选爆款产品低至0.95折](http://click.aliyun.com/m/1000210942/)
-
-<iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="1" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe>
-
-**相关博文：**
-· [Java基础知识总结（超级经典）](https://www.cnblogs.com/guyike/p/11225552.html)
-· [Java基础（二）面向对象（上）](https://www.cnblogs.com/zhaof/p/9257109.html)
-· [java创建一个对象时，内存中发生了什么](https://www.cnblogs.com/chen-jack/p/7895299.html)
-· [Java基础知识总结【转+整合】](https://www.cnblogs.com/liqinghuan/p/7718116.html)
-· [Java基础知识总结](https://www.cnblogs.com/zmy-520131499/p/11165828.html)
-» [更多推荐...](https://recomm.cnblogs.com/blogpost/4794322)
-
-[![AWS免费套餐](https://img2020.cnblogs.com/blog/2016690/202011/2016690-20201107113124642-85659290.png)](https://brands.cnblogs.com/aws/free?source=C2)
-
-**最新 IT 新闻**:
-· [刚刚！嫦娥五号晒出“挖土”工作照](https://news.cnblogs.com/n/678567/)
-· [macOS首次出现在云端：无需购置任何特定的硬件或软件，即可针对iPhone、iPad、Mac 等开发软件](https://news.cnblogs.com/n/678566/)
-· [谷歌宣布Android Studio Arctic Fox：启用新代号命名规则](https://news.cnblogs.com/n/678565/)
-· [微软通过Mesa D3D12代码着手改善跨平台支持](https://news.cnblogs.com/n/678564/)
-· [15岁女生发明捡乒乓球机器人：灵感来自农田收割机](https://news.cnblogs.com/n/678563/)
-» [更多新闻...](https://news.cnblogs.com/)
-
-### 公告
-
-[![BYRans的头像](https://pic.cnblogs.com/avatar/665518/20150619101346.png)](http://home.cnblogs.com/u/BYRans/)
-
-
-
- [![查看BYRans的GitHub](https://images.cnblogs.com/cnblogs_com/BYRans/761498/o_github19.png) GitHub](http://www.github.com/BYRans/)   [![查看BYRans的LinkedIn资料](http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png) LinkedIn](https://cn.linkedin.com/in/byrans)
-
-
- 
-
-
-
-昵称： [BYRans](https://home.cnblogs.com/u/BYRans/)
-园龄： [6年3个月](https://home.cnblogs.com/u/BYRans/)
-粉丝： [201](https://home.cnblogs.com/u/BYRans/followers/)
-关注： [7](https://home.cnblogs.com/u/BYRans/followees/)
-
-[+加关注](javascript:void(0))
-
-### 导航
-
-- [博客园](https://www.cnblogs.com/)
-- [首页](https://www.cnblogs.com/BYRans/)
-- [新随笔](https://i.cnblogs.com/EditPosts.aspx?opt=1)
-- [联系](https://msg.cnblogs.com/send/BYRans)
-- [订阅](javascript:void(0)) [![订阅](https://www.cnblogs.com/skins/kubrick/images/xml.gif)](https://www.cnblogs.com/BYRans/rss/)
-- [管理](https://i.cnblogs.com/)
-
-### 统计
-
-- 随笔 - 35
-- 文章 - 0
-- 评论 - 48
-- 引用 - 0
-
-### 最新随笔
-
-- [1.【论文笔记】DeepOrigin: End-to-End Deep Learning for Detection of New Malware Families](https://www.cnblogs.com/BYRans/p/10864427.html)
-- [2.【论文笔记】Malware Detection with Deep Neural Network Using Process Behavior](https://www.cnblogs.com/BYRans/p/10289938.html)
-- [3.Scala入门 【1】](https://www.cnblogs.com/BYRans/p/Scala.html)
-- [4.RocketMQ与Kafka对比（18项差异）](https://www.cnblogs.com/BYRans/p/6100653.html)
-- [5.Kafka简介](https://www.cnblogs.com/BYRans/p/6054930.html)
-- [6.Spark存储管理（读书笔记）](https://www.cnblogs.com/BYRans/p/5945667.html)
-- [7.Spark调度管理（读书笔记）](https://www.cnblogs.com/BYRans/p/5943946.html)
-- [8.Spark基本工作流程及YARN cluster模式原理(读书笔记)](https://www.cnblogs.com/BYRans/p/5889374.html)
-- [9.YARN资源调度器](https://www.cnblogs.com/BYRans/p/5567650.html)
-- [10.HDFS Federation (读书笔记)](https://www.cnblogs.com/BYRans/p/5524780.html)
-
-### 积分与排名
-
-- 积分 - 84042
-- 排名 - 10758
-
-### 随笔分类 (35)
-
-- [Hama(2)](https://www.cnblogs.com/BYRans/category/702879.html)
-- [HDFS(2)](https://www.cnblogs.com/BYRans/category/778509.html)
-- [Java(2)](https://www.cnblogs.com/BYRans/category/732935.html)
-- [Kafka(2)](https://www.cnblogs.com/BYRans/category/910517.html)
-- [Linux(2)](https://www.cnblogs.com/BYRans/category/783257.html)
-- [Machine Learning(7)](https://www.cnblogs.com/BYRans/category/719322.html)
-- [Paper(2)](https://www.cnblogs.com/BYRans/category/1386290.html)
-- [Scala(1)](https://www.cnblogs.com/BYRans/category/952833.html)
-- [Spark(10)](https://www.cnblogs.com/BYRans/category/761225.html)
-- [Yarn(5)](https://www.cnblogs.com/BYRans/category/777291.html)
-
-### 随笔档案 (35)
-
-- [2019年5月(1)](https://www.cnblogs.com/BYRans/archive/2019/05.html)
-- [2019年1月(1)](https://www.cnblogs.com/BYRans/archive/2019/01.html)
-- [2017年2月(1)](https://www.cnblogs.com/BYRans/archive/2017/02.html)
-- [2016年11月(2)](https://www.cnblogs.com/BYRans/archive/2016/11.html)
-- [2016年10月(2)](https://www.cnblogs.com/BYRans/archive/2016/10.html)
-- [2016年9月(1)](https://www.cnblogs.com/BYRans/archive/2016/09.html)
-- [2016年6月(1)](https://www.cnblogs.com/BYRans/archive/2016/06.html)
-- [2016年5月(3)](https://www.cnblogs.com/BYRans/archive/2016/05.html)
-- [2016年4月(1)](https://www.cnblogs.com/BYRans/archive/2016/04.html)
-- [2016年3月(1)](https://www.cnblogs.com/BYRans/archive/2016/03.html)
-- [2016年2月(2)](https://www.cnblogs.com/BYRans/archive/2016/02.html)
-- [2016年1月(3)](https://www.cnblogs.com/BYRans/archive/2016/01.html)
-- [2015年12月(3)](https://www.cnblogs.com/BYRans/archive/2015/12.html)
-- [2015年11月(3)](https://www.cnblogs.com/BYRans/archive/2015/11.html)
-- [2015年10月(1)](https://www.cnblogs.com/BYRans/archive/2015/10.html)
-- [2015年9月(1)](https://www.cnblogs.com/BYRans/archive/2015/09.html)
-- [2015年8月(6)](https://www.cnblogs.com/BYRans/archive/2015/08.html)
-- [2015年7月(1)](https://www.cnblogs.com/BYRans/archive/2015/07.html)
-- [2015年6月(1)](https://www.cnblogs.com/BYRans/archive/2015/06.html)
-
-### 最新评论
-
-- [1. Re:Java基础知识总结](https://www.cnblogs.com/BYRans/p/Java.html)
-- 挺好的！！！
-- --wuyangedu
-- [2. Re:Java基础知识总结](https://www.cnblogs.com/BYRans/p/Java.html)
-- 缺少IO流和序列化的相关知识
-- --想成为老菜鸟的小菜鸟
-- [3. Re:线性回归、梯度下降（Linear Regression、Gradient Descent）](https://www.cnblogs.com/BYRans/p/4700202.html)
-- 博主你好，请问您对损失函数求导时的求和函数上限是否是m而不是n？小白一枚求教~
-- --Lovaer
-- [4. Re:Kafka简介](https://www.cnblogs.com/BYRans/p/6054930.html)
-- 没有副本概念你差评
-- --水底的小鱼鱼
-- [5. Re:逻辑回归（Logistic Regression）](https://www.cnblogs.com/BYRans/p/4713624.html)
-- 小白一枚。。请教下楼主，一直不明白几点：1. 逻辑回归模型，是如何来计算属于某个类别的概率的？2. 对于二分类模型，一个类的概率被判别为a。另一类就是1-a。这个时候判定属于哪类的话，基本都是以阈值0...
-- --老笨啊
-
-### 阅读排行榜
-
-- [1. Java基础知识总结(70339)](https://www.cnblogs.com/BYRans/p/Java.html)
-- [2. 逻辑回归（Logistic Regression）(41341)](https://www.cnblogs.com/BYRans/p/4713624.html)
-- [3. Spark SQL 官方文档-中文翻译(25142)](https://www.cnblogs.com/BYRans/p/5057110.html)
-- [4. Spark官方文档 - 中文翻译(22506)](https://www.cnblogs.com/BYRans/p/5292763.html)
-- [5. Kafka简介(17014)](https://www.cnblogs.com/BYRans/p/6054930.html)
-
-Powered by: [博客园](https://www.cnblogs.com/) Copyright © 2020 BYRans
-Powered by .NET 5.0.0 on Kubernetes

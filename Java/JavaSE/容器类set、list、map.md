@@ -10,7 +10,7 @@
 
 ②容器API的类图结构如下所示：
 
-​    ![img](https://img-blog.csdn.net/20161217161905977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjY1NDUzMDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+​    ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217161905977)
 
 
 
@@ -76,7 +76,7 @@ public int hashCode(){
 
    Iterator接口定义了如下方法：
 
-   ![img](https://img-blog.csdn.net/20161217170218449?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjY1NDUzMDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+   ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170218449)
 
 
 
@@ -142,4 +142,4 @@ public class Demo2 {
 
 
 
-![img](https://img-blog.csdn.net/20161217170732394?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjY1NDUzMDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)  ![img](https://img-blog.csdn.net/20161217170747285?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjY1NDUzMDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170732394)  ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170747285)

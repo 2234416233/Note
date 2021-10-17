@@ -16,13 +16,12 @@
 
 - 4）不能使用`docker export、save、cp`等命令来备份数据卷的内容，因为数据卷是存在于镜像之外的。备份的方法可以是创建一个新容器，挂载数据卷容器，同时挂载一个本地目录，然后把远程数据卷容器的数据卷通过备份命令备份到映射的本地目录里面。如下：
 
-  ```
+  ```bash
    # docker run --rm --volumes-from container -v ${pwd}:/backup ubuntu:latest tar cvf /backup/backup.tar -C /data
-  1
   ```
-
-  **解释**：**container** ：指定挂载卷绑定的容器（name | id）,`${pwd}`是docker支持的指定当前目录的方法, backup 是容器中的备份目录，backup.tar 是最终打包的报名+后缀，-C 后面指定打包数据对应的数据卷在容器中的目录；
-
+  
+**解释**：**container** ：指定挂载卷绑定的容器（name | id）,`${pwd}`是docker支持的指定当前目录的方法, backup 是容器中的备份目录，backup.tar 是最终打包的报名+后缀，-C 后面指定打包数据对应的数据卷在容器中的目录；
+  
 - 5）也可以把一个本地主机的目录当做数据卷挂载在容器上，同样是在docker run后面跟-v参数，不过-v后面跟的不再是单独的目录了，它是`[host-dir]:[container-dir]:[rw|ro]`这样格式的， `host-dir`是一个绝对路径的地址，如果`host-dir`不存在，则docker会创建一个新的数据卷，如果`host-dir`存在，但是指向的是一个不存在的目录，则docker也会创建该目录，然后使用该目录做数据源。
   **解释**：:rw 读写（默认是读写），:ro 只读 如:-v /e/data:/data:ro
 
@@ -47,7 +46,7 @@
 
 - 方式一：宿主机上未准备“数据卷”目录和文件，由容器默认指定
 
-```
+```bash
 如下为容器添加一个数据卷，并将容器名改为container，这个数据卷在容器里的目录是/opt/data
 [root@localhost ~]# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -76,9 +75,7 @@ txt1  txt2
 root@2b9aebcf6ce8:/opt/data# ls
 txt1  txt2
 root@2b9aebcf6ce8:/opt/data# cat txt1  
-123
 asdhfjashdfjk
-123456789101112131415161718192021222324252627282930
 ```
 
 - 方式二：宿主机上提前准备“数据卷”目录和文件
@@ -93,16 +90,15 @@ asdhfjashdfjk
 
 **查看镜像：**
 
-```
+```bash
 [root@localhost ~]# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 docker.io/ubuntu    latest              0ef2e08ed3fa        2 weeks ago         130 MB
-123
 ```
 
 **使用镜像创建容器：**
 
-```
+```bash
 docker run -it --name container -p 8080:80 -p 8081:81 -v /e/data:/data  docker.io/ubuntu /bin/bash
 
 [root@localhost volumes]# docker ps
@@ -113,10 +109,6 @@ root@2b9aebcf6ce8:# cd /data
 root@2b9aebcf6ce8:/data# ls
 look.txt
 root@2b9aebcf6ce8:/data# cat look.txt
-123
-123
-123
-12345678910111213
 ```
 
 **说明：**
@@ -130,7 +122,7 @@ root@2b9aebcf6ce8:/data# cat look.txt
 
 ## 挂载宿主机文件或目录到容器数据卷：
 
-```
+```bash
 可以直接挂载宿主机文件或目录到容器里，可以理解为目录映射，这样就可以让所有的容器共享宿主机数据，从而只需要改变宿主机的数据源就能够影响到所有的容器数据。
  
 注意：
@@ -182,10 +174,8 @@ test1
 宿主机上查看
 [root@localhost ~]# cat /var/huanqiupc/test
 test
-1231
 [root@localhost ~]# cat /var/huanqiupc/test1
 test1
-44444
  
 3）挂载多个目录
 [root@localhost ~]# mkdir /opt/data1 /opt/data2
@@ -204,14 +194,13 @@ root@cf2d57b9bee1:/# echo "date1" >> /var/www/data1/test1
 root@cf2d57b9bee1:/# echo "date2" >> /var/www/data2/test2
 bash: /var/www/data2/test2: Read-only file system
 root@cf2d57b9bee1:/#
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273
 ```
 
 ## 创建数据卷容器：
 
 启动一个名为container容器，此容器包含两个数据卷/var/volume1和/var/volume2（这两个数据卷目录是在容器里的，容器创建的时候会自动生成这两目录）
 
-```
+```bash
 注意一个细节：
 下面的创建命令中，没有加-t和-i参数，所以这个容器创建好之后是登陆不了的！
 -i：表示以“交互模式”运行容器
@@ -248,12 +237,11 @@ this is volume1
 this is volume2
 
 即便是删除了初始的数据卷容器container ，或是删除了其它容器，但只要是有容器在使用该数据卷，那么它里面的数据就不会丢失！（除非是没有容器在使用它们）
-123456789101112131415161718192021222324252627282930313233343536
 ```
 
 ## 备份数据卷:
 
-```
+```bash
 docker run --rm --volumes-from test -v ${pwd}:/backup ubuntu:14.04 tar cvf /backup/test.tar /test
 tar: Removing leading `/' from member names
 /test/
@@ -335,12 +323,11 @@ anaconda-ks.cfg  a.py  backup1.tar  backup2.tar  backup.tar  mkimage-yum.sh  pip
   
 这样,数据卷容器中的数据就备份完成了. 简言之就是：
 先创建一个容器，并挂载要备份的容器数据卷，再挂载数据卷${pwd}:/backup目录到容器/bakcup，在容器中执行备份/data目录到/backup，也就是备份到宿主机${pwd}:/backup目录。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081
 ```
 
 ## 恢复或迁移数据卷:
 
-```
+```bash
 可以恢复给同一个容器或者另外的容器，新建容器并解压备份文件到新的容器数据卷
 [$ sudo 无root权限的时候可以带上sudo] docker run -t -i -d -v /test --name test4 ubuntu:14.04  /bin/bash
 docker run --rm --volumes-from test4 -v ${pwd}:/backup ubuntu:14.04 tar xvf /backup/test.tar -C /
@@ -499,12 +486,11 @@ volume1  volume2
 test1  test11  test111
 [root@9bad9b3bde71 /]# ls /var/huihui/var/volume2
 test2  test22  test222
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158
 ```
 
 ## 删除数据卷：
 
-```
+```bash
 Volume 只有在下列情况下才能被删除：
 1）docker rm -v删除容器时添加了-v选项
 2）docker run --rm运行容器时添加了--rm选项
@@ -514,7 +500,6 @@ Volume 只有在下列情况下才能被删除：
 可以使用下面方式找出，然后删除_data目录下的数据文件
 [root@localhost volumes]# docker inspect huihui|grep /var/lib/docker/volumes
  "Source": "/var/lib/docker/volumes/97aa95420e66de20abbe618fad8d0c1da31c54ce97e32a3892fa921c7942d42b/_data",
-123456789
 ```
 
 **总结：**
@@ -522,7 +507,7 @@ Volume 只有在下列情况下才能被删除：
 - 交互式和守护式需要加 /bin/bash ；
 - 挂载间接数据卷容器：如 容器C 容器B（共享容器A数据卷的容器，挂载了容器卷A） 容器A（数据卷容器），那么容器C 可以通过挂载容器B间接挂载/共享容器A的挂载卷信息；
 - 进入容器，执行df命令查看该容器挂载卷情况，如图：
-  ![在这里插入图片描述](https://img-blog.csdn.net/20181019184559864?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZyYWdyYW50X25vMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+  ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20181019184559864)
 - 还可以使用多个 --volumes-from 参数来从多个容器挂载多个数据卷;
 - docker --help 查看docker的帮助命令,如图:
-  ![在这里插入图片描述](https://img-blog.csdn.net/20181019184811839?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZyYWdyYW50X25vMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+  ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20181019184811839)

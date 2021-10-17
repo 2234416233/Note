@@ -96,7 +96,6 @@ public class FlyPig implements Serializable {
                 '}';
     }
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758591234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
 ```
 
 注意下，注释的代码，是一会儿要各种情况下使用的。
@@ -147,7 +146,6 @@ public class SerializableTest {
         return person;
     }
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243441234567891011121314151617181920212223242526272829303132333435363738394041424344
 ```
 
 对上面的2个操作文件流的类的简单说明
@@ -161,7 +159,7 @@ ObjectInputStream代表对象输入流：
 ### 第一种：上来就这些代码，不动，直接run，看效果。
 
 实际运行结果，他会在 d:/flyPig.txt 生成个文件。
-![在这里插入图片描述](https://img-blog.csdn.net/20171128174520339)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171128174520339)
 从运行结果上看：
 1，他实现了对象的序列化和反序列化。
 2，transient 修饰的属性，是不会被序列化的。我设置的奥迪四个圈的车不见啦，成了null。my god。
@@ -175,13 +173,12 @@ ObjectInputStream代表对象输入流：
         //FlyPig flyPig = deserializeFlyPig();
         //System.out.println(flyPig.toString());
     }    
-1234512345
 ```
 
 这个完了之后，意思也就是说，你先序列化个对象到文件了。这个对象是带静态变量的static。
 现在修改flyPig类里面的AGE的值，给改成26吧。
 然后，看下图里面的运行代码和执行结果。
-![在这里插入图片描述](https://img-blog.csdn.net/20171128175500301)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171128175500301)
 可以看到，刚刚序列化的269，没有读出来。而是刚刚修改的26，如果可以的话，应该是覆盖这个26，是269才对。
 所以，得出结论，这个静态static的属性，他不序列化。
 
@@ -189,12 +186,12 @@ ObjectInputStream代表对象输入流：
 
 最暴力的改法，直接把model的类实现的这个接口去掉。然后执行后面的序列化和反序列化的方法。直接报错。
 抛异常：NotSerializableException
-![在这里插入图片描述](https://img-blog.csdn.net/20171128180238053)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171128180238053)
 这个太暴力啦，不推荐这么干。
 
 然后就是，还和上面的操作差不多，先是单独执行序列化方法。生成文件。
 然后，打开属性 addTip ，这之后，再次执行反序列化方法，看现象。
-![在这里插入图片描述](https://img-blog.csdn.net/20171128180555161)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171128180555161)
 抛异常：InvalidClassException 详情如下。
 InvalidClassException: com.lxk.model.FlyPig;
 local class incompatible:
@@ -211,7 +208,7 @@ local class serialVersionUID = 7565838717623951575
 
 再来一次，就是先序列化，这个时候，把 private static final long serialVersionUID = 1L; 这行代码的注释打开。那个addTip属性先注释掉
 序列化之后，再把这个属性打开，再反序列化。看看什么情况。
-![在这里插入图片描述](https://img-blog.csdn.net/20171128181357981)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171128181357981)
 这个时候，代码执行OK，一切正常。good。
 
 ## 这个现象对我们有什么意义：

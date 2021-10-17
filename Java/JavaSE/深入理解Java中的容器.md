@@ -4,9 +4,9 @@
 
 1、容器的概念
 在Java当中，如果有一个类专门用来存放其它类的对象，这个类就叫做容器，或者就叫做集合，集合就是将若干性质相同或相近的类对象组合在一起而形成的一个整体
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301102601329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_8,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301185638582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304112011122.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301102601329.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301185638582.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304112011122.png)
 2、容器与数组的关系
 之所以需要容器：
 1、数组的长度难以扩充
@@ -17,7 +17,7 @@
 3、如果非要将容器当做一个数组来使用，通过toArray方法返回的就是一个数组
 示例程序：
 
-```
+```java
 package IT;
 
 import java.util.ArrayList;
@@ -48,12 +48,11 @@ public class App
     	   }
      }
 }
-123456789101112131415161718192021222324252627282930
 ```
 
 输出结果：
 
-```
+```bash
 12
 10
 35
@@ -63,12 +62,11 @@ public class App
 10
 35
 100
-123456789
 ```
 
 3、容器常用的几个方法
 
-```
+```java
 boolean add(Object obj):向容器中添加指定的元素
 Iterator iterator（）：返回能够遍历当前集合中所有元素的迭代器
 Object[] toArray():返回包含此容器中所有元素的数组。
@@ -79,14 +77,13 @@ Object add（int index,Object element）：在下标为index的位置添加一�
 Object put(Object key,Object value):向容器中添加指定的元素
 Object get（Object key）：获取关键字为key的那个对象
 int size():返回容器中的元素数
-12345678910
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304132425836.png)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190228173021584.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304132425836.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190228173021584.png)
 实例程序：
 
-```
+```java
 package IT;
 
 import java.util.ArrayList;
@@ -132,12 +129,11 @@ public class App
            
      }
 }
-123456789101112131415161718192021222324252627282930313233343536373839404142434445
 ```
 
 运行结果：
 
-```
+```bash
 原容器中的元素为:
 [12, 10, 35, 100]
 
@@ -159,22 +155,21 @@ public class App
 [12, 80, 20, 100]
 删除之后容器中的容量为:
 4
-123456789101112131415161718192021
 ```
 
 4、容器的分类
 容器分为Set集、List列表、Map映射
 Set集合：由于内部存储结构的特点，Set集合中不区分元素的顺序（即使存放的类实现了compareTo方法，也是没用的），不允许出现重复的元素（用户自定义的类有的时候需要实现相应方法），TreeSet容器特殊，元素放进去的时候自然而然就有顺序了，Set容器可以与数学中的集合相对应：相同的元素不会被加入。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301100913567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_12,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304111158456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301100913567.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304111158456.png)
 List列表：由于内部存储结构的特点，List集合中区分元素的顺序，且允许包含重复的元素。List集合中的元素都对应一个整数型的序号记载其在容器中的位置，可以根据序号存取容器中的元素—有序，可以重复
 Map映射：由于内部存储结构的特点，映射中不能包含重复的键值，每个键最多只能映射一个值，否则会出现覆盖的情况(后面的value值会将前面的value值覆盖掉)，Map是一种把键对象和值对象进行映射的集合，即Map容器中既要存放数据本身，也要存放关键字:相同的元素会被覆盖
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301144152195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304111230179.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301144152195.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304111230179.png)
 **注意：对于Set和Map来说,元素放进去之后是没有顺序的，如果希望元素放进去之后是有顺序的，可以用treeSet和treeMap存储数据。**
 实例程序：
 
-```
+```java
        var set2 = mutable.Set.empty[Int]
        set2 += 10
        set2 ++= List(50,100,200)
@@ -187,22 +182,20 @@ Map映射：由于内部存储结构的特点，映射中不能包含重复的�
        map3 ++= List("Scala"->100.0,"Java"->60.0)
        println("Map输出的结果：")
        println(map3)
-123456789101112
 ```
 
 运行结果：
 
-```
+```bash
 Set输出的结果：
 Set(100, 50, 500, 10, 200)
 Map输出的结果：
 Map(Hadoop -> 80.0, Spark -> 90.0, Scala -> 100.0, Java -> 60.0)
-1234
 ```
 
 实例程序：
 
-```
+```java
        var treeSet = TreeSet(10,20,30,90,100,200,50)
        println(treeSet)
        /*键值对排序是根据key的值进行排序的,没有value的事情,让我联想到了MapReduce中排序的时候之所以根据k2
@@ -212,21 +205,19 @@ Map(Hadoop -> 80.0, Spark -> 90.0, Scala -> 100.0, Java -> 60.0)
        println(treeSet2)
        var treeMap = TreeMap[String,Integer]("Java"->100,"Scala"->88,"Python"->60,"Anglebaby"->500)
        println(treeMap)
-123456789
 ```
 
 运行结果：
 
-```
+```bash
 TreeSet(10, 20, 30, 50, 90, 100, 200)
 TreeSet(Anang, Baby, Hello, Spark)
 Map(Anglebaby -> 500, Java -> 100, Python -> 60, Scala -> 88)
-123
 ```
 
 示例程序：
 
-```
+```java
 class Student implements Comparable<Object>
 {
 	public int id;
@@ -333,15 +324,14 @@ public class Test_ArrayList_1
 	--------------------
  * */
 
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106
 ```
 
-![这里写图片描述](https://img-blog.csdn.net/20160727144133391)
+![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20160727144133391)
 
 5、toString()方法的使用：凡是把类对象放到容器中，相应的类都应该实现Object类中的toString()方法；凡是Java中自带的数据类型，都已经重写完了toString()方法
 实例1：(未重写toString()方法之前)
 
-```
+```java
 package IT;
 
 
@@ -368,22 +358,20 @@ class Student
     	 this.score = score;
      }
 }
-1234567891011121314151617181920212223242526
 ```
 
 输出结果：
 
-```
+```bash
 -----凡是Java中自带的数据类型都已经重写完了toString()方法！---
 2
 zhang
 IT.Student@1af2f973
-1234
 ```
 
 实例2：(重写完toString()方法之后)
 
-```
+```java
 package IT;
 
 import java.util.ArrayList;
@@ -414,21 +402,19 @@ class Student
     	 return this.name+"\t"+this.score;
      }
 }
-123456789101112131415161718192021222324252627282930
 ```
 
 输出结果：
 
-```
+```bash
 [zhangsan	89.8, lisi	90.0, wangwu	60.6]
-1
 ```
 
 6、Comparable接口中的compareTo()方法:凡是需要进行比较排序的类都应该实现Comparable接口中的compareTo()方法；凡是把类对象放到以树为内部结构的容器中都应该实现Comparable接口中的compareTo()方法
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190228210731157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_12,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190228210731157.png)
 实例1：
 
-```
+```java
 package IT;
 
 import java.util.ArrayList;
@@ -471,22 +457,20 @@ class Student implements  Comparable<Student>
 	      return (int) (this.score - obj.score);//比较的标准为score进行升序
 	}
 }
-123456789101112131415161718192021222324252627282930313233343536373839404142
 ```
 
 输出结果：
 
-```
+```bash
 wangwu	60.6
 wangting	85.6
 zhangsan	89.8
 lisi	90.0
-1234
 ```
 
 实例2：
 
-```
+```java
 package IT;
 
 
@@ -530,28 +514,26 @@ class Student implements  Comparable<Student>
 	    	  return -1;
 	}
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243
 ```
 
 输出结果：
 
-```
+```bash
 zhangsan	60.6
 wangwu	60.6
 wangting	85.6
 lisi	90.0
-1234
 ```
 
 7、凡是把类对象放到以哈希表为内部存储结构的容器中，相应的类必须要实现equals方法和hashCode方法，这样才符合哈希表真实的逻辑功能.（对于咱们自己定义的类，如果你没有重写hashcode方法，我们可以通过hashcode方法获取该对象的内存地址）
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301180934855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301180934855.png)
 **简而言之：哈希表先根据它的hashcode方法提供的哈希码找到存储的位置，在从位置所关联的链表里面寻找是否有相同的对象，如果有相同的对象，则不存放，如果没有，则存放进去。** 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301184852790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301193242564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301184852790.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301193242564.png)
 如果你还不懂，看我这篇文章吧：https://wenku.baidu.com/view/a1f1c88ce518964bcf847cd0
 实例程序1：(为重写之前)
 
-```
+```java
 package IT;
 
 
@@ -626,12 +608,11 @@ class Student implements  Comparable<Student>
 	    	  return -1;
 	}
 }
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374
 ```
 
 输出结果:
 
-```
+```bash
 先测试Java中自带的数据类型:
 wangting	87.5
 wangwu	98.6
@@ -648,12 +629,11 @@ wangwu	66.9	beijing
 zhangsan	88.8	beijing
 lisi	88.8	beijing
 如果没有重写:导致相同的对象不会被覆盖!
-12345678910111213141516
 ```
 
 实例程序2:重写之后
 
-```
+```java
 package IT;
 
 
@@ -718,24 +698,22 @@ class Student implements  Comparable<Student>
 		return this.name==cc.name&&this.score==cc.score;
 	}
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364
 ```
 
 输出结果:
 
-```
+```bash
 测试用户自定义的数据类型--重写两个方法之后:
 wangwu	66.9	beijing
 zhangsan	88.8	beijing
 lisi	88.8	beijing
 重写过后:相同的对象会被覆盖!
-12345
 ```
 
 8、重要的一个逻辑:逻辑上来讲，只要两个对象的内容相同，其地址(hashCode()返回值)以及这两个对象就应该相同(equals())，
 实例程序(为重写之前):
 
-```
+```java
 package IT;
 
 public class App
@@ -779,12 +757,11 @@ class Student implements  Comparable<Student>
 	    	  return -1;
 	}
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243
 ```
 
 输出结果:
 
-```
+```bash
 true
 true
 true
@@ -794,12 +771,11 @@ true
 false
 488676694
 1211729930
-123456789
 ```
 
 重写之后：
 
-```
+```java
 package IT;
 
 public class App
@@ -845,16 +821,14 @@ class Student implements  Comparable<Student>
 		return this.name==cc.name&&this.score==cc.score;
 	}
 }
-123456789101112131415161718192021222324252627282930313233343536373839404142434445
 ```
 
 输出结果:
 
-```
+```bash
 true
 -2147483648
 -2147483648
-123
 ```
 
 上面的5、6、7、8可以归结为4个"凡是"，1个“逻辑”:
@@ -863,7 +837,7 @@ true
 3、凡是把类对象放到以哈希表为内部存储结构的容器中，相应的类必须要实现equals方法和hashCode方法，这样才符合哈希表真实的逻辑功能.
 4、逻辑上来讲，只要两个对象的内容相同，其地址(hashCode()返回值)以及这两个对象就应该相同(equals())。
 9、哈希冲突的相关概念
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190301142009623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301142009623.png)
 本质上讲就是:hash(对象1.hashCode())=hash2(对象2.hashCode())，即第一个对象的hashCode()方法返回的哈希码值带入到哈希函数后得到的索引位置与第二个对象的hashCode()方法返回的哈希码值带入到哈希函数后得到的索引位置相同，这就是哈希冲突。
 最常见的哈希算法是取模法。
 下面简单讲讲取模法的计算过程。
@@ -872,21 +846,20 @@ true
 如果数据的分布比较广泛，而且储存数据的数组长度比较大。
 那么哈希冲突就比较少。否则冲突是很高的。
 10、iterator接口的作用
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304104505807.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304104747885.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304104505807.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304104747885.png)
 重要方法:
 
-```
+```java
 boolean hasNext():是用来判断当前游标(迭代器)的后面是否存在元素，如果存在返回真，否则返回假
 Object next()：先返回当前游标右边的元素，然后游标后移一个位置
 void remove()：不推荐使用iterator的remove()方法，而是推荐使用容器自带的remove方法。
-123
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190304103327282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2EyMDExNDgwMTY5,size_6,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304103327282.png)
 实例程序:
 
-```
+```java
 package IT;
 
 import java.util.HashMap;
@@ -914,12 +887,11 @@ public class App
     	 
      }
 }
-123456789101112131415161718192021222324252627
 ```
 
 思考题:
 
-```
+```java
 package IT;
 
 
@@ -963,12 +935,11 @@ class Student implements Comparable<Object>
 	}
 
 }
-12345678910111213141516171819202122232425262728293031323334353637383940414243
 ```
 
 程序3：
 
-```
+```java
 public class Test_iterator
 {
     public static void main(String[] args)
@@ -996,7 +967,4 @@ public class Test_iterator
 	20
 	30
  */
-123456789101112131415161718192021222324252627
 ```
-
-上面的讲解如有问题，欢迎留言指正！

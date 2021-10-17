@@ -4,7 +4,11 @@
 
 前几节学习了「链表」、「时间与空间复杂度」的概念，本节将结合「循环链表」、「双向链表」与 「用空间换时间的设计思想」来设计一个很有意思的缓存淘汰策略：LRU缓存淘汰算法。
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058214-ef5baeb53bd498d.jpg)三种最常见的链表结构
+<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058214-ef5baeb53bd498d.jpg" style="zoom: 80%;" />
+
+<center>三种最常见的链表结构</center>
+
+
 
 ### 循环链表的概念
 
@@ -25,9 +29,12 @@
 双向链表的数据结构中，会有两个比较重要的参数： `pre` 和 `next` 。
 
 - `pre` 指向前一个数据结构
+
 - `next` 指向下一个数据结构
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058214-f9ab1f0800c7384.jpg)单链表与双链表的对比
+  <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058214-f9ab1f0800c7384.jpg" style="zoom:80%;" />
+
+  <center>单链表与双链表的对比</center>
 
 ### 双向链表的特点
 
@@ -43,7 +50,9 @@
 
 双向链表的添加元素包括头插法和尾插法。
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058215-e6e2f7b25f243e2.jpg)头插法和尾插法
+<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058215-e6e2f7b25f243e2.jpg" style="zoom:80%;" />
+
+<center>头插法和尾插法</center>
 
 **头插法：**将链表的左边称为链表头部，右边称为链表尾部。头插法是将右边固定，每次新增的元素都在左边头部增加。
 
@@ -51,7 +60,9 @@
 
 #### 2.查询元素
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058215-2747f88e2c54dd4.gif)查询元素
+<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058215-2747f88e2c54dd4.gif" style="zoom:80%;" />
+
+<center>查询元素</center>
 
 双向链表的灵活处就是**知道链表中的一个元素结构就可以向左或者向右开始遍历查找需要的元素结构**。因此对于一个有序链表，双向链表的按值查询的效率比单链表高一些。因为，我们可以记录上次查找的位置 p，每次查询时，根据要查找的值与 p 的大小关系，决定是往前还是往后查找，所以平均只需要查找一半的数据。
 
@@ -62,13 +73,17 @@
 - 删除结点中“值等于某个给定值”的结点
 - 删除给定指针指向的结点
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058216-878116e54aff824.gif)删除元素
+<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058216-878116e54aff824.gif" style="zoom:80%;" />
+
+<center>删除元素</center>
 
 对于双向链表来说，双向链表中的结点已经保存了前驱结点的指针，删除时不需要像单链表那样遍历。所以，针对第二种情况，单链表删除操作需要 O(n) 的时间复杂度，而双向链表只需要在 O(1) 的时间复杂度。
 
 ### 双向循环链表
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058216-bbb76e486eb2c86.jpg)双向循环链表
+<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058216-bbb76e486eb2c86.jpg" style="zoom:80%;" />
+
+<center>双向循环链表</center>
 
 如图所示，双向循环链表的概念很好理解：「双向链表」 + 「循环链表」的组合。
 
@@ -84,7 +99,9 @@
 
 LRU是最近最少使用策略的缩写，是根据数据的历史访问记录来进行淘汰数据，其核心思想是“如果数据最近被访问过，那么将来被访问的几率也更高”。
 
-![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058217-d04a9a59eae15d2.gif)LRU概念
+<img src="C:\Users\fang\Downloads\1571058217-d04a9a59eae15d2.gif" style="zoom:80%;" />
+
+<center>LRU概念</center>
 
 ### 链表实现LRU
 
@@ -103,7 +120,11 @@ LRU是最近最少使用策略的缩写，是根据数据的历史访问记录�
 
 - 如果此时缓存已满，则链表尾结点删除，将新的数据结点插入链表的头部。
 
-  ![看动画轻松理解「链表」实现「LRU缓存淘汰算法」](http://www.cxyxiaowu.com/wp-content/uploads/2019/10/1571058217-80f70dc6f7dbe30.gif)链表实现LRU
+  <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058217-80f70dc6f7dbe30.gif" style="zoom: 80%;" />
+  
+  
+  
+  <center>链表实现LRU</center>
 
 通过动图可以发现，如果缓存空间足够大，那么存储的数据也就足够多，通过缓存中命中数据的概率就越大，也就提高了代码的执行速度。这就是**空间换时间的设计思想**。
 

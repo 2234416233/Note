@@ -6,7 +6,7 @@
 
 ### 分析
 
-```
+```java
 public class Test {
     public static void main(String[] args){
         String str = "";
@@ -32,12 +32,12 @@ D:\>javac Test.java
 D:\>java Test
 4655
 0
-*/1234567891011121314151617181920212223242526
+*/
 ```
 
 可以看到确实是差距巨大，并且我们也看过不少下面反编译的字节码指令：
 
-![这里写图片描述](https://img-blog.csdn.net/20171122165753319?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbTBfMzc1ODkzMjc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122165753319)
 
 上面的方框是+循环拼接，下面的方框是append循环拼接。
 可以看到循环中+拼接会创建一个StringBuilder，除此之外和直接使用StringBuilder没有两样，但问题是每次循环都会new一个StringBuilder，也就是说效率就差在这里了。
@@ -47,7 +47,7 @@ D:\>java Test
 
 对于此处的str = str + “a”，编译器会处理为new StringBuilder().append(str).append(“a”)，不管一次性+几个字符串，只要+拼接全部在一条语句中，就只会new一次，循环中+拼接被断成了十万条语句，那自然就会new十万次，证据如下：
 
-```
+```java
 public class Test {
     public static void main(String[] args){
         String a = "a";
@@ -57,15 +57,15 @@ public class Test {
         String e = a + b + c;
         e += d;
     }
-}12345678910
+}
 ```
 
 反编译后：
-![这里写图片描述](https://img-blog.csdn.net/20171122195304877?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbTBfMzc1ODkzMjc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122195304877)
 可以看到，对于有String类型变量参与的情况（String变量+”字面量” 或者 String变量+String变量），只要+拼接没有断，那就会一直调用append，一旦另起一条语句，马上就会new一个StringBuilder.
 所以最开始那样拼接十万次的测试根本没有意义，根本不公平，真要测试也应该像下面这样：
 
-```
+```java
 public class Test {
     public static void main(String[] args){
         String str = "";
@@ -90,14 +90,14 @@ D:\>javac Test.java
 D:\>java Test
 4656
 3116
-*/12345678910111213141516171819202122232425
+*/
 ```
 
 这样看来，差距也没什么，实际上如果数量再大些，+效率比直接StringBuilder可能更好。
 
 或者这样测试（此时已经不是String类型变量而是字面量了）：
 
-```
+```java
 public class Test {
     public static void main(String[] args){
         long start = System.currentTimeMillis();
@@ -121,17 +121,17 @@ D:\>javac Test.java
 D:\>java Test
 0
 0
-*/123456789101112131415161718192021222324
+*/
 ```
 
 数量太少，不够用。
-![这里写图片描述](https://img-blog.csdn.net/20171122204153118?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbTBfMzc1ODkzMjc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122204153118)
 （把StringBuilder的测试给省了，太长了，截不下）
 如果查看字节码指令的话，会发现这200个”a”直接就被合成了一个完整的字符串（jdk1.8下的结果，我不知道jdk1.7是不是这样），没有使用StringBuilder，这可能和字符串的常量池有关，但是从结果来看，字符串字面量的拼接是不会使用new的。
 
 公司的项目不知出于什么原因不让用ORM框架，非要手动拼接SQL语句，对于是否使用+拼接大量SQL还和同事争论了一番，对于那些静态固定的SQL，用+来换行增强可读性完全没有问题；但是如果要动态改变SQL条件的话，还是应该使用StringBuilder的append，因为动态SQL肯定会根据不同的条件拼接不同的String变量，那么SQL语句中途肯定会断开，用+的话每断开一次都会new一次。
 
-```
+```java
 String sql1 = "SELECT COL1, COL2, COL3, COL4 "
          + "FROM TABLE1 LEFT JOIN TABLE2 "
          + "ON TABLE1.ID = TABLE2.ID WHERE "
@@ -144,7 +144,7 @@ if(var1 != null)
     sb.append(" AND COL5 = ").append(var1);
 if(var2 != null)
     sb.append(" AND COL6 = ").append(var2);
-String sql2 = sb.toString();123456789101112131415
+String sql2 = sb.toString();
 ```
 
 其实编译器还可能对+进行一些优化，比如`String a = b + c + d` 可能被处理成`a = new StringBuilder(b).append(c).append(d)`

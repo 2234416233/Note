@@ -1,8 +1,7 @@
 # Docker改变image存放位置
 
-
 ubuntu上存放docker的位置在/val/lib/docker,这个根目录通常分配的空间较小。这里128G的ssd只有16G的空间
-![df-l](https://img-blog.csdn.net/20180602135101453?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FMRE5PQUhfWkVSTw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![df-l](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180602135101453)
 想扩充容量的方式很多，这里提供一种较为简陋的解决方案。
 
 - 备份已有镜像
@@ -47,4 +46,4 @@ sudo rm -r /var/lib/docker1
 ```
 
 - 删除后，docker镜像转移到了home/docker目录，可以下更多镜像啦(ps:容量还是不够用，能接个大容量机械硬盘就好了)
-  ![df-l](https://img-blog.csdn.net/20180602135149802?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FMRE5PQUhfWkVSTw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+  ![df-l](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180602135149802)

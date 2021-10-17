@@ -129,9 +129,9 @@ Java为了提高性能，静态字符串（字面量/常量/常量连接的结�
 （2）str指向在常量池中的字符串"hello"，在编译期就已经确定；str2指向堆上的对象，是在运行期创建，而堆中实际存放的字符串还是常量池中"hello"，即value属性还是指向常量池中的字符串；
 
 由下面的运行图即可看出，str和str2中value属性的实际地址是相同的，即最终指向的字符串的位置是相同的。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190318155015924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5neWFhNzI5,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190318155015924.png)
 内存模型图入下图所示：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190318160908185.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h1YW5neWFhNzI5,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190318160908185.png)
 结论：String str2 = new String(“hello”);首先会在堆内存中申请一块内存存储对象内容,同时还会检查字符串常量池中是否含有"hello"字符串,若没有则添加"hello"到字符串常量池中，同时把常量池中的地址放到堆内存中；若有，则直接去常量池中的字符串内存地址即可；然后在栈中创建一个引用str2指向其堆内存块对象。（此过程中可能会创建两个对象，也可能就一个）
 
 **关于String对象的一些常见问题**

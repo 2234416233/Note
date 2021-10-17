@@ -16,23 +16,18 @@ Git是分布式版本控制系统，它就没有中央服务器的，每个人�
 
 安装完成后，打开Git bash软件，弹出一个类似cmd的命令行窗口，证明安装成功。
 
-![img](https://img-blog.csdn.net/20180603175057943?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180603175057943)
 
 安装完成后，需要进行设置，在命令行输入以下代码：
 
-```
+```bash
 $ git config --global user.name "Your Name"
-
-
-
 $ git config --global user.email "email@example.com"
 ```
 
 顾名思义，这是设置你的名字和Email地址。
 
 我们可以查看一下用户名和密码：
-
-
 
 ```shell
 $ git config user.name
@@ -41,11 +36,11 @@ $ git config user.email
 
 假如我们这时候报错，证明Git的用户名和密码没有配置成功，我们还可以这样做：
 
-在用户主目录下找到 .git 文件夹： ![img](https://img-blog.csdn.net/20180607221809679?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+在用户主目录下找到 .git 文件夹： ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180607221809679)
 
 然后打开 config 文件，这是专门用来配置和读取相应的工作环境变量的，在里面加上如图所示内容：
 
-![img](https://img-blog.csdn.net/20180607222124131?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180607222124131)
 
 这样也就完成了对Git用户名和邮箱的配置。
 
@@ -59,7 +54,7 @@ $ git config user.email
 
 ``
 
-```
+```shell
 $ mkdir learngit //创建一个名叫learngit的空目录
 $ cd learngit //把learngit设置为当前目录
 $ pwd //查看当前目录
@@ -81,14 +76,14 @@ Initialized empty Git repository in /Users/Administrator/learngit/.git/
 
 我们在 learngit 目录下编写一个 readme.txt 文件，内容如下：
 
-```
+```shell
 Git is a version control system.
 Git is free software.
 ```
 
 (1) 用 git add 命令，把文件添加到仓库：
 
-```
+```shell
 $ git add readme.txt
 ```
 
@@ -96,7 +91,7 @@ $ git add readme.txt
 
 (2) 用 git commit 命令，把文件提交到仓库：
 
-```
+```shell
 $ git commit -m "wrote a readme file" //-m后面输入的是本次提交的说明，可以输入任意内容。
 [master (root-commit) eaadf4e] wrote a readme file
  1 file changed, 2 insertions(+) //1 file changed：1个文件被改动（新添加的readme.txt文件）；2 insertions：插入了两行内容（readme.txt内有两行内容）
@@ -114,7 +109,7 @@ Git is free software.
 
 运行 git status 命令：
 
-```
+```shell
 $ git status //查看仓库当前的状态
 On branch master
 Changes not staged for commit: //没有文件将要被提交
@@ -128,7 +123,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 如果我们想知道上次是怎么修改readme.txt 文件的，需要用 git diff 命令：
 
-```
+```shell
 $ git diff readme.txt 
 diff --git a/readme.txt b/readme.txt
 index 46d49bf..9247db6 100644
@@ -144,13 +139,13 @@ index 46d49bf..9247db6 100644
 
 (1) git add
 
-```
+```shell
 $ git add readme.txt
 ```
 
 没有任何输出，这时候可以用 git status 查看一下当前仓库状态：
 
-```
+```shell
 $ git status
 On branch master
 Changes to be committed: //将要被提交的文件包括 readme.txt
@@ -160,7 +155,7 @@ Changes to be committed: //将要被提交的文件包括 readme.txt
 
 ``(2) git commit
 
-```
+```shell
 $ git commit -m "add distributed"
 [master e475afc] add distributed
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -168,7 +163,7 @@ $ git commit -m "add distributed"
 
 再用 git status 查看一下当前仓库状态：
 
-```
+```shell
 $ git status
 On branch master
 nothing to commit, working tree clean //当前没有需要提交的修改，而且，工作目录是干净的。
@@ -185,7 +180,7 @@ Git is free software distributed under the GPL.
 
 然后添加并提交：
 
-```
+```shell
 $ git add readme.txt
 $ git commit -m "append GPL"
 [master 1094adb] append GPL
@@ -194,7 +189,7 @@ $ git commit -m "append GPL"
 
 到目前为止，readme.txt 文件一共有三个版本被提交到了 Git 仓库里，我们可以用 git log 命令进行查看：
 
-```
+```shell
 $ git log //查看历史记录
 commit 1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -> master)
 Author: Michael Liao <askxuefeng@gmail.com>
@@ -212,7 +207,7 @@ Date:   Fri May 18 20:59:18 2018 +0800
 
 我们还可以加上 --pretty=oneline 参数：
 
-```
+```shell
 $ git log --pretty=oneline
 1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -> master) append GPL
 e475afc93c209a690c39c13a46716e8fa000c366 add distributed
@@ -221,14 +216,14 @@ eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0 wrote a readme file //一大串数字�
 
 好了，现在如果我们想把 readme.txt 文件退回到上一个版本，就可以使用 git reset 命令：
 
-```
+```shell
 $ git reset --hard HEAD^ //HEAD表示当前版本，则HEAD^表示上一个版本，那么上上版本就是HEAD^^
 HEAD is now at e475afc add distributed
 ```
 
 这时候用 cat 命令查看一下 readme.txt 的内容：
 
-```
+```shell
 $ cat readme.txt //查看 readme.txt 文件的内容
 Git is a distributed version control system.
 Git is free software.
@@ -238,7 +233,7 @@ Git is free software.
 
 我们现在想要回到最新的版本，还是使用 git reset 命令：
 
-```
+```shell
 $ git reset --hard 1094a //这里不能用HEAD而必须使用 commit id ，因为最新版本在之前返回时已经被删除了，1094a就是最新版本的 commit id，可以在之前的代码中查到
 
 HEAD is now at 83b0afe append GPL
@@ -246,7 +241,7 @@ HEAD is now at 83b0afe append GPL
 
 这时再查看一下 readme.txt 文件内容：
 
-```
+```shell
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -268,7 +263,7 @@ learngit 文件夹就是一个工作区。
 
 版本库里面的 index(stage) 文件叫暂存区，还有Git为我们自动创建的第一个分支 master ，以及指向 master 的一个指针叫做 HEAD。
 
-![img](https://img-blog.csdn.net/20180603202659766)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180603202659766)
 
 前面我们提到过，如果我们想把文件添加到Git里面时，需要分两步：
 
@@ -280,7 +275,7 @@ learngit 文件夹就是一个工作区。
 
 在 readme.txt 文件中加上一行内容：
 
-```
+```shell
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
 Git has a mutable index called stage.
@@ -290,7 +285,7 @@ Git has a mutable index called stage.
 
 使用两次 git add 命令分别把 readme.txt 和 LICENSE 都添加后，可以用 git status 命令查看一下：
 
-```
+```shell
 $ git status
 On branch master
 Changes to be committed:
@@ -301,11 +296,11 @@ Changes to be committed:
 
 现在，暂存区的状态就变成这样了：
 
-![img](https://img-blog.csdn.net/20180603204003143)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180603204003143)
 
 再使用 git commit 命令把暂存区的所有修改提交到分支：
 
-```
+```shell
 $ git commit -m "understand how stage works"
 [master e43a48b] understand how stage works
  2 files changed, 2 insertions(+)
@@ -314,7 +309,7 @@ $ git commit -m "understand how stage works"
 
 这时候的工作区就是干净的：
 
-```
+```shell
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -322,7 +317,7 @@ nothing to commit, working tree clean
 
 这时候版本库就变成了这样：
 
-![img](https://img-blog.csdn.net/20180603204522746)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180603204522746)
 
 
 
@@ -332,7 +327,7 @@ Git 如此的优秀是因为，Git 跟踪并管理的不是文件，而是修改
 
 我们对 readme.txt 文件进行修改：
 
-```
+```shell
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -342,7 +337,7 @@ Git tracks changes.
 
 然后，添加：
 
-```
+```shell
 $ git add readme.txt
 $ git status
 # On branch master
@@ -355,7 +350,7 @@ $ git status
 
 然后再修改 readme.txt 文件：
 
-```
+```shell
 $ cat readme.txt 
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -365,7 +360,7 @@ Git tracks changes of files.
 
 提交：
 
-```
+```shell
 $ git commit -m "git tracks changes"
 [master 519219b] git tracks changes
  1 file changed, 1 insertion(+)
@@ -373,7 +368,7 @@ $ git commit -m "git tracks changes"
 
 这时候我们查看一下状态：
 
-```
+```shell
 $ git status
 On branch master
 Changes not staged for commit:
@@ -389,7 +384,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 提交后，我们可以用 git diff HEAD -- readme.txt 命令去查看工作区和版本库里面最新版本的区别：
 
-```
+```shell
 $ git diff HEAD -- readme.txt 
 diff --git a/readme.txt b/readme.txt
 index 76d770f..a9c5755 100644
@@ -407,7 +402,7 @@ index 76d770f..a9c5755 100644
 
 假如说你在 readme.txt 文件中添加了一行内容如下：
 
-```
+```shell
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -422,13 +417,13 @@ My stupid boss still prefers SVN.
 
 可以手动删除最后一行，手动把文件恢复到上一个版本的状态。然后再用 git checkout -- file 命令丢弃工作区的修改：
 
-```
+```shell
 $ git checkout -- readme.txt //把readme.txt文件在工作区的修改全部撤销。
 ```
 
 现在看一下 readme.txt 文件内容：
 
-```
+```shell
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -442,7 +437,7 @@ Git tracks changes of files.
 
 这时候的修改添加到了暂存区，但没有提交到分支，用 git status 查看一下：
 
-```
+```shell
 $ git status
 On branch master
 Changes to be committed:
@@ -452,7 +447,7 @@ Changes to be committed:
 
 这时候我们可以使用 git reset HEAD file 命令把把暂存区的修改撤销掉，重新放回工作区：
 
-```
+```shell
 $ git reset HEAD readme.txt //git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区，HEAD表示最新版本。
 Unstaged changes after reset:
 M    readme.txt
@@ -460,7 +455,7 @@ M    readme.txt
 
 现在再用 git status 查看一下：
 
-```
+```shell
 $ git status
 On branch master
 Changes not staged for commit:
@@ -471,7 +466,7 @@ Changes not staged for commit:
 
 这时候再丢弃工作区的修改就OK了：
 
-```
+```shell
 $ git checkout -- readme.txt //丢弃工作区的修改。
 $ git status
 On branch master
@@ -490,7 +485,7 @@ nothing to commit, working tree clean
 
 在工作区即 learngit 文件夹下新建一个 test.txt 文件，并添加和提交到Git：
 
-```
+```shell
 $ git add test.txt
 $ git commit -m "add test.txt"
 [master b84166e] add test.txt
@@ -500,7 +495,7 @@ $ git commit -m "add test.txt"
 
 这时候可用 rm 命令删除：
 
-```
+```shell
 $ rm test.txt
 ```
 
@@ -510,7 +505,7 @@ $ rm test.txt
 
 (1) 确实要从版本库中删除该文件，那就用 git rm 命令删除，并且 git commit：
 
-```
+```shell
 $ git rm test.txt
 rm 'test.txt'
 $ git commit -m "remove test.txt"
@@ -523,7 +518,7 @@ $ git commit -m "remove test.txt"
 
 (2) 文件被删错了。因为版本库里有，所以很好恢复：
 
-```
+```shell
 $ git checkout -- test.txt //用版本库里的版本替换工作区的版本。
 ```
 
@@ -531,15 +526,15 @@ $ git checkout -- test.txt //用版本库里的版本替换工作区的版本。
 
 在开始这部分之前，我们需要自行注册GitHub账号。而且，因为你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以需要设置：
 
-(1) 创建SSH Key。在用户主目录下![img](https://img-blog.csdn.net/20180603214733481?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)，看看有没有.ssh 目录，如果有的话，看此目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果有，直接跳到下一步。如果没有，打开Git Bash，创建SSH
+(1) 创建SSH Key。在用户主目录下![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180603214733481)，看看有没有.ssh 目录，如果有的话，看此目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果有，直接跳到下一步。如果没有，打开Git Bash，创建SSH
 
 (2) 登陆GitHub，打开"Account settings"
 
-![img](https://img-blog.csdn.net/20180604164558991?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180604164558991)
 
 然后点击"Add SSH and GPG Keys"，再点击"New SSH Key"进行SSH Key 的创建，填上任意 Title ，把 id_rsa.pub 中的内容复制到Key文本框内：
 
-![img](https://img-blog.csdn.net/20180604165343129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180604165343129)
 
 
 
@@ -549,15 +544,15 @@ $ git checkout -- test.txt //用版本库里的版本替换工作区的版本。
 
 首先，登陆GitHub，在右上角找到“Create a new repo”按钮，创建一个新的仓库：
 
-![img](https://img-blog.csdn.net/20180604212644739?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180604212644739)
 
 在Repository name填入 learngit ``（因为我已经创建完成了，所以提示此用户名存在）其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：
 
-![img](https://img-blog.csdn.net/20180604213055637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180604213055637)
 
 如上图所示我已经把本地仓库的内容推送到了GitHub上了，大家创建完以后应该是一个空的仓库。这时候我们可以在本地learngit仓库下运行命令：
 
-```
+```shell
 $ git remote add origin git@github.com:RFHzhj/learngit.git //“RFHzhj”是我的GitHub的账户名，你需要填写你自己的账户名
 ```
 
@@ -565,7 +560,7 @@ $ git remote add origin git@github.com:RFHzhj/learngit.git //“RFHzhj”是我�
 
 然后，我们就可以把本地库的所有内容推送到远程库上：
 
-```
+```shell
 $ git push -u origin master 
 
 Counting objects: 20, done.
@@ -585,13 +580,13 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样：
 
-![img](https://img-blog.csdn.net/20180604214243431?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE1MjA4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180604214243431)
 
 
 
 从现在起，只要本地作了提交，就可以通过命令：
 
-```
+```shell
 $ git push origin master
 ```
 
