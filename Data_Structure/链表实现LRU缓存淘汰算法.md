@@ -4,7 +4,7 @@
 
 前几节学习了「链表」、「时间与空间复杂度」的概念，本节将结合「循环链表」、「双向链表」与 「用空间换时间的设计思想」来设计一个很有意思的缓存淘汰策略：LRU缓存淘汰算法。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058214-ef5baeb53bd498d.jpg" style="zoom: 80%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058214-ef5baeb53bd498d.jpg" style="zoom: 80%;" />
 
 <center>三种最常见的链表结构</center>
 
@@ -32,7 +32,7 @@
 
 - `next` 指向下一个数据结构
 
-  <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058214-f9ab1f0800c7384.jpg" style="zoom:80%;" />
+  <img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058214-f9ab1f0800c7384.jpg" style="zoom:80%;" />
 
   <center>单链表与双链表的对比</center>
 
@@ -50,7 +50,7 @@
 
 双向链表的添加元素包括头插法和尾插法。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058215-e6e2f7b25f243e2.jpg" style="zoom:80%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058215-e6e2f7b25f243e2.jpg" style="zoom:80%;" />
 
 <center>头插法和尾插法</center>
 
@@ -60,7 +60,7 @@
 
 #### 2.查询元素
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058215-2747f88e2c54dd4.gif" style="zoom:80%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058215-2747f88e2c54dd4.gif" style="zoom:80%;" />
 
 <center>查询元素</center>
 
@@ -73,7 +73,7 @@
 - 删除结点中“值等于某个给定值”的结点
 - 删除给定指针指向的结点
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058216-878116e54aff824.gif" style="zoom:80%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058216-878116e54aff824.gif" style="zoom:80%;" />
 
 <center>删除元素</center>
 
@@ -81,7 +81,7 @@
 
 ### 双向循环链表
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058216-bbb76e486eb2c86.jpg" style="zoom:80%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058216-bbb76e486eb2c86.jpg" style="zoom:80%;" />
 
 <center>双向循环链表</center>
 
@@ -120,7 +120,7 @@ LRU是最近最少使用策略的缩写，是根据数据的历史访问记录�
 
 - 如果此时缓存已满，则链表尾结点删除，将新的数据结点插入链表的头部。
 
-  <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058217-80f70dc6f7dbe30.gif" style="zoom: 80%;" />
+  <img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058217-80f70dc6f7dbe30.gif" style="zoom: 80%;" />
   
   
   

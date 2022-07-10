@@ -44,4 +44,4 @@ int main()
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/2018072516412341.png" style="zoom:200%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/2018072516412341.png" style="zoom:200%;" />

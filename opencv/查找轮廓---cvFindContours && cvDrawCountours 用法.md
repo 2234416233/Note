@@ -212,7 +212,7 @@ int main()
 }  
 ```
 
-result1：![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1358652014_8444.jpg)
+result1：![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1358652014_8444.jpg)
 
 
 
@@ -276,7 +276,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 resul2：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1358652088_3094.jpg)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1358652088_3094.jpg)
 
 
 
@@ -312,13 +312,13 @@ ps：
 
 还有，这幅图片没有被当做一个大轮廓，上面那个小猫的，整幅图片被框了一下。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1358603371_5745.jpg)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1358603371_5745.jpg)
 
 
 
 另外， 把 关于 cvFindContours && cvDrawContours 两个函数部分删除，二值化结果如下：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1358603739_4911.jpg)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1358603739_4911.jpg)
 
 
 

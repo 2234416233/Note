@@ -17,13 +17,13 @@
 
 　　在 Java虚拟机 中，线程从最初的创建到最终的消亡，要经历若干个状态：**创建(new)**、**就绪(runnable/start)**、**运行(running)**、**阻塞(blocked)**、**等待(waiting)**、**时间等待(time waiting)** 和 **消亡(dead/terminated)**。在给定的时间点上，一个线程只能处于一种状态，各状态的含义如下图所示：
 
-　　　　　　　　　　　　![JVM中线程的状态.png-55kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/JVMthread_status.png)
+　　　　　　　　　　　　![JVM中线程的状态.png-55kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/JVMthread_status.png)
 
 　　当我们需要线程来执行某个子任务时，就必须先创建一个线程。但是线程创建之后，不会立即进入就绪状态，因为线程的运行需要一些条件（比如程序计数器、Java栈、本地方法栈等），只有线程运行需要的所有条件满足了，才进入就绪状态。当线程进入就绪状态后，不代表立刻就能获取CPU执行时间，也许此时CPU正在执行其他的事情，因此它要等待。当得到CPU执行时间之后，线程便真正进入运行状态。线程在运行状态过程中，可能有多个原因导致当前线程不继续运行下去，比如用户主动让线程睡眠（睡眠一定的时间之后再重新执行）、用户主动让线程等待，或者被同步块阻塞，此时就对应着多个状态：time waiting（睡眠或等待一定的时间）、waiting（等待被唤醒）、blocked（阻塞）。当由于突然中断或者子任务执行完毕，线程就会被消亡。
 
 　　实际上，Java只定义了六种线程状态，分别是 New, Runnable, Waiting，Timed Waiting、Blocked 和 Terminated。为形象表达线程从创建到消亡之间的状态，下图将Runnable状态分成两种状态：正在运行状态和就绪状态：
 　　
-　　　　　　　　　　　　　![线程的生命周期.jpg-52.8kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/thread_live.jpg)
+　　　　　　　　　　　　　![线程的生命周期.jpg-52.8kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/thread_live.jpg)
 
 ------
 
@@ -49,7 +49,7 @@
 
 - **run()方法不需要用户来调用**。
 
-  　　　　　　　　　　　　　　![Thread类 的结构.png-3.1kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/Thread_define.png)
+  　　　　　　　　　　　　　　![Thread类 的结构.png-3.1kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/Thread_define.png)
 
 线程创建的代码示例：
 
@@ -111,7 +111,7 @@ public class ThreadTest {
 
 　　Thread 类实现了 Runnable 接口，在 Thread 类中，有一些比较关键的属性，比如name是表示Thread的名字，可以通过Thread类的构造器中的参数来指定线程名字，priority表示线程的优先级（最大值为10，最小值为1，默认值为5），daemon表示线程是否是守护线程，target表示要执行的任务。
 
-　　　　　　　　　　　　![Thread类.png-38.9kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/Thread_class.png)
+　　　　　　　　　　　　![Thread类.png-38.9kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/Thread_class.png)
 
 ------
 
@@ -127,7 +127,7 @@ public class ThreadTest {
 
 　**run()方法是不需要用户来调用的。****当通过start()方法启动一个线程之后，一旦线程获得了CPU执行时间，便进入run()方法体去执行具体的任务。**注意，创建线程时必须重写run()方法，以定义具体要执行的任务。
 
-　　　　　　　　　　　![Thread-run.png-26.7kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/Thread-run.png)
+　　　　　　　　　　　![Thread-run.png-26.7kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/Thread-run.png)
 　
 　**一般来说，有两种方式可以达到重写run()方法的效果：**
 
@@ -144,7 +144,7 @@ public class ThreadTest {
 
 - **sleep方法不会释放锁，也就是说如果当前线程持有对某个对象的锁，则即使调用sleep方法，其他线程也无法访问这个对象。**
 
-  　　　　　　　　　　　![sleep 定义.png-31.6kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/sleep_define.png)
+  　　　　　　　　　　　![sleep 定义.png-31.6kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/sleep_define.png)
 
 ------
 
@@ -158,7 +158,7 @@ public class ThreadTest {
 
 - **它同样不会释放锁**。
 
-  　　　　　　　　　　　　![yield 的定义.png-9.3kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/yield_define.png)
+  　　　　　　　　　　　　![yield 的定义.png-9.3kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/yield_define.png)
 
 
 ```java
@@ -196,7 +196,7 @@ public final void join() throws InterruptedException {...}
 ```
 
 　　以 join(long millis) 方法为例，其内部调用了Object的wait()方法，如下图：
-　　　　　　　　　　　　![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20170208184518762)
+　　　　　　　　　　　　![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20170208184518762)
 
 　　根据以上源代码可以看出，**join()方法是通过wait()方法 (Object 提供的方法) 实现的。\**当 millis == 0 时，会进入 while(isAlive()) 循环，并且只要子线程是活的，宿主线程就不停的等待。\** wait(0) 的作用是让当前线程(宿主线程)等待，而这里的当前线程是指 Thread.currentThread() 所返回的线程。所以，虽然是子线程对象(锁)调用wait()方法，但是阻塞的是宿主线程。**
 
@@ -296,7 +296,7 @@ static void ensure_join(JavaThread* thread) {
 
 　interrupt，顾名思义，即中断的意思。**单独调用interrupt方法可以使得 \**处于阻塞状态的线程\** 抛出一个异常，也就是说，\**它可以用来中断一个正处于阻塞状态的线程\****；另外，通过 interrupted()方法 和 isInterrupted()方法 可以停止正在运行的线程。interrupt 方法在 JDK 中的定义为：
 
-　　　　　　　　　　　　　　![interrupt 定义.png-18.7kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/interrupt_define.png)
+　　　　　　　　　　　　　　![interrupt 定义.png-18.7kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/interrupt_define.png)
 　
 　interrupted() 和 isInterrupted()方法在 JDK 中的定义分别为：
 　　　　　　　　　　　　　　![interrupted以及isInterrupted.png-69.2kB](C:\Users\fang\Downloads\interrupted_isInterrupted.png)
@@ -434,12 +434,12 @@ class MyThread extends Thread{
 
 **实例方法 suspend() 在类Thread中的定义：**
 
-　　　　　　　　　　　![suspend 的定义.png-46.2kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/suspend_define.png)
+　　　　　　　　　　　![suspend 的定义.png-46.2kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/suspend_define.png)
 　　
 　　　　
 **实例方法 resume() 在类Thread中的定义：**
 
-　　　　　　　　　　　![resume 的定义.png-36.3kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/resume_define.png)
+　　　　　　　　　　　![resume 的定义.png-36.3kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/resume_define.png)
 
 ------
 
@@ -502,7 +502,7 @@ public class SynchronizedObject {
 
 　　在示例 2 中，特别要注意的是，**println() 方法实质上是一个同步方法。**如果 thread 线程刚好在执行打印语句时被挂起，那么将会导致 main线程中的字符串 “main end!” 迟迟不能打印。其中，println() 方法定义如下：
 
-　　　　　　　　　　　　![println 方法.png-13.5kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/println_define.png)
+　　　　　　　　　　　　![println 方法.png-13.5kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/println_define.png)
 
 ```java
 // 示例 2
@@ -540,7 +540,7 @@ public class MyThread extends Thread {
 
 　**currentThread() 方法返回代码段正在被哪个线程调用的信息**。其在 Thread类 中定义如下：
 
-　　　　　　　　　　　　　　　　![currentThread.png-8.9kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/currentThread.png)
+　　　　　　　　　　　　　　　　![currentThread.png-8.9kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/currentThread.png)
 
 　　下面的例子给出了 currentThread() 方法的使用方式：
 
@@ -600,7 +600,7 @@ public class CountOperate extends Thread {
 
 　　**方法 isAlive() 的功能是判断调用该方法的线程是否处于活动状态。**其中，**活动状态指的是线程已经 start (无论是否获得CPU资源并运行) 且尚未结束。**
 　　
-　　　　　　　　　　　　　　![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161203224546845)
+　　　　　　　　　　　　　　![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161203224546845)
 
 　　下面的例子给出了 isAlive() 方法的使用方式：
 
@@ -655,7 +655,7 @@ public class CountOperate extends Thread {
 
 　　**方法 getId() 的作用是取得线程唯一标识，由JVM自动给出**。
 
-　　　　　　　　　　　　　　![getId 定义.png-17.7kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/getId_define.png)
+　　　　　　　　　　　　　　![getId 定义.png-17.7kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/getId_define.png)
 
 ```java
 // 示例
@@ -689,7 +689,7 @@ public static final int MAX_PRIORITY = 10;
 
 　　在 Thread类中，方法 setPriority() 的定义为：
 
-　　　　　　　　　　　　![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161211210318131)
+　　　　　　　　　　　　![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161211210318131)
 
 ------
 
@@ -742,7 +742,7 @@ public class MyThread1 extends Thread {
 
 　　**在 Java 中，线程可以分为两种类型，即用户线程和守护线程。**守护线程是一种特殊的线程，具有“陪伴”的含义：当进程中不存在非守护线程时，则守护线程自动销毁，典型的守护线程就是垃圾回收线程。**任何一个守护线程都是整个JVM中所有非守护线程的保姆，只要当前JVM实例中存在任何一个非守护线程没有结束，守护线程就在工作；只有当最后一个非守护线程结束时，守护线程才随着JVM一同结束工作。** 在 Thread类中，方法 setDaemon() 的定义为：
 
-　　　　　　　　　　　　![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161211210235505)
+　　　　　　　　　　　　![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161211210235505)
 
 ```java
 public class MyThread extends Thread {
@@ -802,4 +802,4 @@ public class MyThread extends Thread {
 
 3). Thread类 中的方法调用与线程状态关系如下图：
 　　　　
-　　　　　　　　　　　　　![Thread方法与状态.jpg-72.4kB](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/Thread_defien_status11e.jpg)
+　　　　　　　　　　　　　![Thread方法与状态.jpg-72.4kB](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/Thread_defien_status11e.jpg)

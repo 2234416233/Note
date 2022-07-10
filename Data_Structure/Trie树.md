@@ -19,7 +19,7 @@ Trie 树，也叫“字典树”。顾名思义，它是一个**树形结构**�
 
 如果将这 5 个字符串组织成下图的结构，从肉眼上扫描过去感官上是不是比查找起来会更加迅速。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/785056-20190703154442624-956282864.png" style="zoom: 40%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/785056-20190703154442624-956282864.png" style="zoom: 40%;" />
 
 通过上图，可以发现 Trie树 的三个特点：
 
@@ -29,13 +29,13 @@ Trie 树，也叫“字典树”。顾名思义，它是一个**树形结构**�
 
 通过动画理解 Trie 树构造的过程。在构造过程中的每一步，都相当于往 Trie 树中插入一个字符串。当所有字符串都插入完成之后，Trie 树就构造好了。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/5a429d46a44047868e69cf872ede286c.gif)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/5a429d46a44047868e69cf872ede286c.gif)
 
 Trie 树构造
 
 ### Trie树的插入操作
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/38f7645b3f15440993ca8252a97f2363.gif" style="zoom:70%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/38f7645b3f15440993ca8252a97f2363.gif" style="zoom:70%;" />
 
 Trie树的插入操作
 
@@ -51,13 +51,13 @@ Trie树的插入操作很简单，其实就是将单词的每个字母逐一插�
 
 在 Trie 树中查找一个字符串的时候，比如查找字符串 `code`，可以将要查找的字符串分割成单个的字符 c，o，d，e，然后从 Trie 树的根节点开始匹配。如图所示，绿色的路径就是在 Trie 树中匹配的路径。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/f9ab66be9cbb4c479d6149b2d727eb8c%20(1).jpeg" style="zoom:70%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/f9ab66be9cbb4c479d6149b2d727eb8c%20(1).jpeg" style="zoom:70%;" />
 
 code的匹配路径
 
 如果要查找的是字符串`cod`(鳕鱼)呢？还是可以用上面同样的方法，从根节点开始，沿着某条路径来匹配，如图所示，绿色的路径，是字符串`cod`匹配的路径。但是，路径的最后一个节点「d」并不是橙色的，并不是单词标志位，所以`cod`字符串不存在。也就是说，`cod`是某个字符串的前缀子串，但并不能完全匹配任何字符串。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/103885cf05b14c7faef90eb01f4deeaf.jpeg" style="zoom:67%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/103885cf05b14c7faef90eb01f4deeaf.jpeg" style="zoom:67%;" />
 
 code的匹配路径
 
@@ -67,7 +67,7 @@ Trie树的删除操作与二叉树的删除操作有类似的地方，需要考�
 
 #### 删除整个单词（比如hi）
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/3a88658d4aa443e9b1a2039f921a5a2d.gif" style="zoom:67%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/3a88658d4aa443e9b1a2039f921a5a2d.gif" style="zoom:67%;" />
 
 删除整个单词
 
@@ -80,7 +80,7 @@ Trie树的删除操作与二叉树的删除操作有类似的地方，需要考�
 
 #### 删除前缀单词（比如cod）
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/f78ea3a01b4a428daf2e6a24950d6c39%20(1).gif)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/f78ea3a01b4a428daf2e6a24950d6c39%20(1).gif)
 
 删除前缀单词
 
@@ -91,7 +91,7 @@ Trie树的删除操作与二叉树的删除操作有类似的地方，需要考�
 
 #### 删除分支单词（比如cook）
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1b643a637e3647c7977eb47041fe8922.gif" style="zoom:67%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1b643a637e3647c7977eb47041fe8922.gif" style="zoom:67%;" />
 
 删除分支单词
 
@@ -112,7 +112,7 @@ Trie树的删除操作与二叉树的删除操作有类似的地方，需要考�
 
 trie树前缀匹配常用于搜索提示。如当输入一个网址，可以自动搜索出可能的选择。当没有完全匹配的搜索结果，可以返回前缀最相似的可能。
 
-<img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/500977f036334cc1b8de39bd712ad143.jpeg" style="zoom:67%;" />
+<img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/500977f036334cc1b8de39bd712ad143.jpeg" style="zoom:67%;" />
 
 google搜索
 

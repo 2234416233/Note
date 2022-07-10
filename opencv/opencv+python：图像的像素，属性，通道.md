@@ -2,7 +2,7 @@
 
 
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20180617203040375.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20180617203040375.png)
 
 ```python
 #! usr/bin/env python

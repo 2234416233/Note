@@ -4,9 +4,9 @@
 
 1、容器的概念
 在Java当中，如果有一个类专门用来存放其它类的对象，这个类就叫做容器，或者就叫做集合，集合就是将若干性质相同或相近的类对象组合在一起而形成的一个整体
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301102601329.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301185638582.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304112011122.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301102601329.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301185638582.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304112011122.png)
 2、容器与数组的关系
 之所以需要容器：
 1、数组的长度难以扩充
@@ -79,8 +79,8 @@ Object get（Object key）：获取关键字为key的那个对象
 int size():返回容器中的元素数
 ```
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304132425836.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190228173021584.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304132425836.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190228173021584.png)
 实例程序：
 
 ```java
@@ -160,12 +160,12 @@ public class App
 4、容器的分类
 容器分为Set集、List列表、Map映射
 Set集合：由于内部存储结构的特点，Set集合中不区分元素的顺序（即使存放的类实现了compareTo方法，也是没用的），不允许出现重复的元素（用户自定义的类有的时候需要实现相应方法），TreeSet容器特殊，元素放进去的时候自然而然就有顺序了，Set容器可以与数学中的集合相对应：相同的元素不会被加入。
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301100913567.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304111158456.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301100913567.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304111158456.png)
 List列表：由于内部存储结构的特点，List集合中区分元素的顺序，且允许包含重复的元素。List集合中的元素都对应一个整数型的序号记载其在容器中的位置，可以根据序号存取容器中的元素—有序，可以重复
 Map映射：由于内部存储结构的特点，映射中不能包含重复的键值，每个键最多只能映射一个值，否则会出现覆盖的情况(后面的value值会将前面的value值覆盖掉)，Map是一种把键对象和值对象进行映射的集合，即Map容器中既要存放数据本身，也要存放关键字:相同的元素会被覆盖
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301144152195.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304111230179.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301144152195.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304111230179.png)
 **注意：对于Set和Map来说,元素放进去之后是没有顺序的，如果希望元素放进去之后是有顺序的，可以用treeSet和treeMap存储数据。**
 实例程序：
 
@@ -326,7 +326,7 @@ public class Test_ArrayList_1
 
 ```
 
-![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20160727144133391)
+![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20160727144133391)
 
 5、toString()方法的使用：凡是把类对象放到容器中，相应的类都应该实现Object类中的toString()方法；凡是Java中自带的数据类型，都已经重写完了toString()方法
 实例1：(未重写toString()方法之前)
@@ -411,7 +411,7 @@ class Student
 ```
 
 6、Comparable接口中的compareTo()方法:凡是需要进行比较排序的类都应该实现Comparable接口中的compareTo()方法；凡是把类对象放到以树为内部结构的容器中都应该实现Comparable接口中的compareTo()方法
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190228210731157.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190228210731157.png)
 实例1：
 
 ```java
@@ -526,10 +526,10 @@ lisi	90.0
 ```
 
 7、凡是把类对象放到以哈希表为内部存储结构的容器中，相应的类必须要实现equals方法和hashCode方法，这样才符合哈希表真实的逻辑功能.（对于咱们自己定义的类，如果你没有重写hashcode方法，我们可以通过hashcode方法获取该对象的内存地址）
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301180934855.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301180934855.png)
 **简而言之：哈希表先根据它的hashcode方法提供的哈希码找到存储的位置，在从位置所关联的链表里面寻找是否有相同的对象，如果有相同的对象，则不存放，如果没有，则存放进去。** 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301184852790.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301193242564.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301184852790.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301193242564.png)
 如果你还不懂，看我这篇文章吧：https://wenku.baidu.com/view/a1f1c88ce518964bcf847cd0
 实例程序1：(为重写之前)
 
@@ -837,7 +837,7 @@ true
 3、凡是把类对象放到以哈希表为内部存储结构的容器中，相应的类必须要实现equals方法和hashCode方法，这样才符合哈希表真实的逻辑功能.
 4、逻辑上来讲，只要两个对象的内容相同，其地址(hashCode()返回值)以及这两个对象就应该相同(equals())。
 9、哈希冲突的相关概念
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190301142009623.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190301142009623.png)
 本质上讲就是:hash(对象1.hashCode())=hash2(对象2.hashCode())，即第一个对象的hashCode()方法返回的哈希码值带入到哈希函数后得到的索引位置与第二个对象的hashCode()方法返回的哈希码值带入到哈希函数后得到的索引位置相同，这就是哈希冲突。
 最常见的哈希算法是取模法。
 下面简单讲讲取模法的计算过程。
@@ -846,8 +846,8 @@ true
 如果数据的分布比较广泛，而且储存数据的数组长度比较大。
 那么哈希冲突就比较少。否则冲突是很高的。
 10、iterator接口的作用
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304104505807.png)
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304104747885.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304104505807.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304104747885.png)
 重要方法:
 
 ```java
@@ -856,7 +856,7 @@ Object next()：先返回当前游标右边的元素，然后游标后移一个�
 void remove()：不推荐使用iterator的remove()方法，而是推荐使用容器自带的remove方法。
 ```
 
-![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190304103327282.png)
+![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190304103327282.png)
 实例程序:
 
 ```java

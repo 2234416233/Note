@@ -10,7 +10,7 @@
 
 ②容器API的类图结构如下所示：
 
-​    ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217161905977)
+​    ![img](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161217161905977)
 
 
 
@@ -76,7 +76,7 @@ public int hashCode(){
 
    Iterator接口定义了如下方法：
 
-   ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170218449)
+   ![img](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161217170218449)
 
 
 
@@ -142,4 +142,4 @@ public class Demo2 {
 
 
 
-![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170732394)  ![img](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20161217170747285)
+![img](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161217170732394)  ![img](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20161217170747285)

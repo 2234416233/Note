@@ -2,7 +2,7 @@
 
 在Git 中执行 git diff 命令后会显示出修改前后两个文件的区别。如下图：
 
-- ![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190122092441741.png)
+- ![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190122092441741.png)
 
 
 ```ruby
@@ -36,10 +36,9 @@ $  +  This change is done in feature-D
 
 
 <center class="half">
-    <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190122100420330.png" width="400"/>
-    <img src="https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20190122100206207.png" width="420"/>
+    <img src="https://cdn.net/gh/2234416233/myImage/img/20190122100420330.png" width="400"/>
+    <img src="https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20190122100206207.png" width="420"/>
 </center>
-
 
 
 

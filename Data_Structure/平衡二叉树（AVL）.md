@@ -10,13 +10,13 @@
 
 二叉搜索树一定程度上可以提高搜索效率，但是当原序列有序时，例如序列 A = {1，2，3，4，5，6}，构造二叉搜索树如图 1.1。依据此序列构造的二叉搜索树为右斜树，同时二叉树退化成单链表，搜索效率降低为 O(n)。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058094-fa3f978179e2c46.jpeg)图 1.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058094-fa3f978179e2c46.jpeg)图 1.1
 
 在此二叉搜索树中查找元素 6 需要查找 6 次。
 
 二叉搜索树的查找效率取决于树的高度，因此保持树的高度最小，即可保证树的查找效率。同样的序列 A，将其改为图 1.2 的方式存储，查找元素 6 时只需比较 3 次，查找效率提升一倍。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058094-e9d8d7ecc63d5e9.jpeg)图 1.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058094-e9d8d7ecc63d5e9.jpeg)图 1.2
 
 可以看出当节点数目一定，保持树的左右两端保持平衡，树的查找效率最高。
 
@@ -33,25 +33,25 @@
 
 例如图 2.1 不是平衡二叉树，因为节点 60 的左子树不是平衡二叉树。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058094-45c45fd57db6544.jpeg)图 2.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058094-45c45fd57db6544.jpeg)图 2.1
 
 图 2.2 也不是平衡二叉树，因为虽然任何一个节点的左子树与右子树都是平衡二叉树，但高度之差已经超过 1 。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058095-b7926360e1a83eb.jpeg)图 2.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058095-b7926360e1a83eb.jpeg)图 2.2
 
 图 2.3 是平衡二叉树。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058095-393fa06c0c08668.jpeg)图 2.3
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058095-393fa06c0c08668.jpeg)图 2.3
 
 ### 3. 平衡因子
 
 **定义：**某节点的左子树与右子树的高度(深度)差即为该节点的平衡因子（BF,Balance Factor），平衡二叉树中不存在平衡因子大于 1 的节点。在一棵平衡二叉树中，节点的平衡因子只能取 0 、1 或者 -1 ，分别对应着左右子树等高，左子树比较高，右子树比较高。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058095-b7926360e1a83eb-1.jpeg)图 3.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058095-b7926360e1a83eb-1.jpeg)图 3.1
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058096-6174fc6a8788b96.jpeg)图 3.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058096-6174fc6a8788b96.jpeg)图 3.2
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058096-791bd715f12fdaa.jpeg)图 3.3
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058096-791bd715f12fdaa.jpeg)图 3.3
 
 ### 4. 节点结构
 
@@ -87,11 +87,11 @@ struct AVLNode{
 
 图 5.1 是一颗平衡二叉树
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058096-f2cf7b24e04289c.jpeg)图 5.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058096-f2cf7b24e04289c.jpeg)图 5.1
 
 在此平衡二叉树插入节点 99 ，树结构变为：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058097-c41a1dbdfb01aa1.gif)动图 5.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058097-c41a1dbdfb01aa1.gif)动图 5.2
 
 在动图 5.2 中，节点 66 的左子树高度为 1，右子树高度为 3，此时平衡因子为 -2，树失去平衡。
 
@@ -105,7 +105,7 @@ struct AVLNode{
 
 #### 5.1 左旋
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058097-5b7cb1b978254e1.jpeg)图 5.1.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058097-5b7cb1b978254e1.jpeg)图 5.1.1
 
 以图 5.1.1 为例，加入新节点 99 后， 节点 66 的左子树高度为 1，右子树高度为 3，此时平衡因子为 -2。为保证树的平衡，此时需要对节点 66 做出旋转，因为右子树高度高于左子树，对节点进行左旋操作，流程如下：
 
@@ -115,7 +115,7 @@ struct AVLNode{
 
 整个操作流程如动图 5.1.2 所示。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058098-fc42e8e7b53f5bd.gif)动图 5.1.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058098-fc42e8e7b53f5bd.gif)动图 5.1.2
 
 - 节点的右孩子替代此节点位置 —— 节点 66 的右孩子是节点 77 ，将节点 77 代替节点 66 的位置
 - 右孩子的左子树变为该节点的右子树 —— 节点 77 的左子树为节点 75，将节点 75 挪到节点 66 的右子树位置
@@ -129,13 +129,13 @@ struct AVLNode{
 （2）节点的左孩子的右子树变为节点的左子树
 （3）将此节点作为左孩子节点的右子树。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058098-17126cc74dbb7eb.gif)动图 5.2.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058098-17126cc74dbb7eb.gif)动图 5.2.1
 
 ### 6. AVL树的四种插入节点方式
 
 假设一颗 AVL 树的某个节点为 A，有四种操作会使 A 的左右子树高度差大于 1，从而破坏了原有 AVL 树的平衡性。平衡二叉树插入节点的情况分为以下四种：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058099-d81dc44b8a27350.jpg)图 6.0
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058099-d81dc44b8a27350.jpg)图 6.0
 
 具体分析如下：
 
@@ -143,7 +143,7 @@ struct AVLNode{
 
 只需要执行一次右旋即可。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058100-30466f3736e257a.gif)动图 6.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058100-30466f3736e257a.gif)动图 6.1
 
 实现代码如下：
 
@@ -189,7 +189,7 @@ Tree LL_rotate(Tree node){
 
 只需要执行一次左旋即可。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058101-3f1834d5101e1ea.gif)动图 6.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058101-3f1834d5101e1ea.gif)动图 6.2
 
 实现代码如下：
 
@@ -237,11 +237,11 @@ Tree RR_rotate(Tree node){
 
 若 A 的左孩子节点 B 的右子树 E 插入节点 F ，导致节点 A 失衡，如图：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058101-91f04ba4c66f700.jpeg)图 6.3
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058101-91f04ba4c66f700.jpeg)图 6.3
 
 A 的平衡因子为 2 ，若仍按照右旋调整，则变化后的图形为这样：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058101-aaddb89a343e5ba.jpeg)图 6.3.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058101-aaddb89a343e5ba.jpeg)图 6.3.1
 
 经过右旋调整发现，调整后树仍然失衡，说明这种情况单纯的进行右旋操作不能使树重新平衡。那么这种插入方式需要执行两步操作，使得旋转之后为 **原来根节点的左孩子的右孩子作为新的根节点**。
 
@@ -250,9 +250,9 @@ A 的平衡因子为 2 ，若仍按照右旋调整，则变化后的图形为这
 
 调整过程如下：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058102-b1e71985aa9c4cd.jpeg)图 6.3.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058102-b1e71985aa9c4cd.jpeg)图 6.3.2
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058102-49332ab177c33d2.jpeg)图 6.3.3
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058102-49332ab177c33d2.jpeg)图 6.3.3
 
 也就是说，经过这两步操作，使得 **原来根节点的左孩子的右孩子 E 节点成为了新的根节点**。
 
@@ -274,11 +274,11 @@ Tree LR_rotate(Tree node){
 （1）对失衡节点 A 的右孩子 C 进行右旋操作，即上述 LL 情形操作。
 （2）对失衡节点 A 做左旋操作，即上述 RR 情形操作。
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058102-2b6d6c55616a2dd.jpeg)图 6.4
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058102-2b6d6c55616a2dd.jpeg)图 6.4
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058103-b245fc6ec0134d8.jpeg)图 6.4.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058103-b245fc6ec0134d8.jpeg)图 6.4.1
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058103-000b95b10084b96.jpeg)图 6.4.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058103-000b95b10084b96.jpeg)图 6.4.2
 
 也就是说，经过这两步操作，使得 **原来根节点的右孩子的左孩子 D 节点成为了新的根节点**。
 
@@ -365,11 +365,11 @@ AVL 树和二叉查找树的删除操作情况一致，都分为四种情况：
 
 ④、如果其父节点失衡，则判断是哪种失衡类型 [LL、LR、RR、RL] ，并对其进行相应的平衡化处理。如果平衡化处理结束后，发现与原来以父节点为根节点的树的高度发生变化，则继续进行 ② 的检索推算；如果与原来以父节点为根节点的高度一致时，则可说明父节点的父节点及祖先节点的平衡因子将不会有变化，因此可以退出处理；
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058089-9071d9ee6259c66.gif)动图 7.1.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058089-9071d9ee6259c66.gif)动图 7.1.1
 
 具体数字演示：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058089-9dc343f38cab361.gif)动图 7.1
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058089-9dc343f38cab361.gif)动图 7.1
 
 #### 7.2  & 7.3 删除的节点只有左子树或右子树
 
@@ -383,7 +383,7 @@ AVL 树和二叉查找树的删除操作情况一致，都分为四种情况：
 
 ④、如果其父节点失衡，则判断是哪种失衡类型 [LL、LR、RR、RL] ，并对其进行相应的平衡化处理。如果平衡化处理结束后，发现与原来以父节点为根节点的树的高度发生变化，则继续进行 ② 的检索推算；如果与原来以父节点为根节点的高度一致时，则可说明父节点的父节点及祖先节点的平衡因子将不会有变化，因此可以退出处理；
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058090-cbe8e3a696d2f2f.gif)动图 7.2
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058090-cbe8e3a696d2f2f.gif)动图 7.2
 
 #### 7.4 删除的节点既有左子树又有右子树
 
@@ -399,7 +399,7 @@ AVL 树和二叉查找树的删除操作情况一致，都分为四种情况：
 
 ⑤、如果其父节点失衡，则判断是哪种失衡类型  [LL、LR、RR、RL]  ，并对其进行相应的平衡化处理。如果平衡化处理结束后，发现与原来以父节点为根节点的树的高度发生变化，则继续进行 ② 的检索推算；如果与原来以父节点为根节点的高度一致时，则可说明父节点的父节点及祖先节点的平衡因子将不会有变化，因此可以退出处理；
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/1571058090-0fe1aac3860521d.gif)动图 7.4
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/1571058090-0fe1aac3860521d.gif)动图 7.4
 
 注：在这里，小吴并没有给出 AVL 的删除操作的代码，也没有给出平衡性修复的动画，因为我并不打算过多去讨论它，更复杂的删除操作过程将放在后续的 **红黑树** 中进行讨论。
 

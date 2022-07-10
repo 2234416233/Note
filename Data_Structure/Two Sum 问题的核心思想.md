@@ -12,13 +12,13 @@ Two Sum 系列问题在 LeetCode 上有好几道，这篇文章就挑出有代�
 
 这个问题如何解决呢？首先最简单粗暴的办法当然是穷举了：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/e2378057e7ea41e4725b78176e47a6e2.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/e2378057e7ea41e4725b78176e47a6e2.png)
 
 这个解法非常直接，时间复杂度 O(N^2)，空间复杂度 O(1)。
 
 更好一点的解法，可以通过一个哈希表减少时间复杂度：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/7e595e03362a0a467582b5001ed15ad9.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/7e595e03362a0a467582b5001ed15ad9.png)
 
 这样，由于哈希表的查询时间为 O(1)，算法的时间复杂度降低到 O(N)，但是需要 O(N) 的空间复杂度来存储哈希表。不过综合来看，是要比暴力解法高效的。
 
@@ -39,7 +39,7 @@ class TwoSum {
 
 如何实现这两个 API 呢，我们可以仿照上一道题目，使用一个哈希表辅助`find`方法：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/145d18c087e0c425f726d59849971fcf.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/145d18c087e0c425f726d59849971fcf.png)
 
 进行`find`的时候有两种情况，举个例子：
 
@@ -55,7 +55,7 @@ class TwoSum {
 
 是的，对于频繁使用`find`方法的场景，我们可以进行优化。我们可以参考上一道题目的暴力解法，借助**哈希集合**来针对性优化`find`方法：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/cfaa6ca80f661ee623113e7ec39fd915.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/cfaa6ca80f661ee623113e7ec39fd915.png)
 
 这样`sum`中就储存了所有加入数字可能组成的和，每次`find`只要花费 O(1) 的时间在集合中判断一下是否存在就行了，显然非常适合频繁使用`find`的场景。
 

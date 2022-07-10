@@ -8,7 +8,7 @@ f(x)=\frac{1}{1+e^x}
 $$
 其函数图像如下：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20170226222316999.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20170226222316999.png)
 
 可以看出，sigmoid函数连续，光滑，严格单调，以(0,0.5)中心对称，是一个非常良好的阈值函数。
 

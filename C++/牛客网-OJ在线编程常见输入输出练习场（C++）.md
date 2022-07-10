@@ -260,4 +260,5 @@ int main()
 }
 ```
 
-getline()可以实现对流的自定义读取，使用istringstream将一个字符串变成了流，这样能被getline使用。
+getline()可以实现对流的自定义读取，使用istringstream将一个字符串变成了流，这样能被getline使用。、
+

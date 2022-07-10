@@ -37,7 +37,7 @@ D:\>java Test
 
 可以看到确实是差距巨大，并且我们也看过不少下面反编译的字节码指令：
 
-![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122165753319)
+![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20171122165753319)
 
 上面的方框是+循环拼接，下面的方框是append循环拼接。
 可以看到循环中+拼接会创建一个StringBuilder，除此之外和直接使用StringBuilder没有两样，但问题是每次循环都会new一个StringBuilder，也就是说效率就差在这里了。
@@ -61,7 +61,7 @@ public class Test {
 ```
 
 反编译后：
-![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122195304877)
+![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20171122195304877)
 可以看到，对于有String类型变量参与的情况（String变量+”字面量” 或者 String变量+String变量），只要+拼接没有断，那就会一直调用append，一旦另起一条语句，马上就会new一个StringBuilder.
 所以最开始那样拼接十万次的测试根本没有意义，根本不公平，真要测试也应该像下面这样：
 
@@ -125,7 +125,7 @@ D:\>java Test
 ```
 
 数量太少，不够用。
-![这里写图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20171122204153118)
+![这里写图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20171122204153118)
 （把StringBuilder的测试给省了，太长了，截不下）
 如果查看字节码指令的话，会发现这200个”a”直接就被合成了一个完整的字符串（jdk1.8下的结果，我不知道jdk1.7是不是这样），没有使用StringBuilder，这可能和字符串的常量池有关，但是从结果来看，字符串字面量的拼接是不会使用new的。
 

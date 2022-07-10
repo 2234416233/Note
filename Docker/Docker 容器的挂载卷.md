@@ -507,7 +507,7 @@ Volume 只有在下列情况下才能被删除：
 - 交互式和守护式需要加 /bin/bash ；
 - 挂载间接数据卷容器：如 容器C 容器B（共享容器A数据卷的容器，挂载了容器卷A） 容器A（数据卷容器），那么容器C 可以通过挂载容器B间接挂载/共享容器A的挂载卷信息；
 - 进入容器，执行df命令查看该容器挂载卷情况，如图：
-  ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20181019184559864)
+  ![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20181019184559864)
 - 还可以使用多个 --volumes-from 参数来从多个容器挂载多个数据卷;
 - docker --help 查看docker的帮助命令,如图:
-  ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/20181019184811839)
+  ![在这里插入图片描述](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/20181019184811839)

@@ -10,7 +10,7 @@
 
 `git status`查看有改动但未提交的文件时总只显示数字串，显示不出中文文件名，非常不方便。如下图：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/v2-bc86ea90ae02e6b27713420b3d52bc3e_1440w.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/v2-bc86ea90ae02e6b27713420b3d52bc3e_1440w.png)
 
 
 
@@ -39,7 +39,7 @@ git config --global core.quotepath false
 
 如图：
 
-![](https://cdn.jsdelivr.net/gh/2234416233/myImage/img/v2-735f07fdbb0da3b73ac3678815026761_1440w.png)
+![](https://gcore.jsdelivr.net/gh/2234416233/myImage/img/v2-735f07fdbb0da3b73ac3678815026761_1440w.png)
 
 
 
